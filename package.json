@@ -1,0 +1,7 @@
+{
+  "name": "dash-tailwindcss-docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ben Booth <bkbooth@gmail.com> (https://benbooth.co)",
+  "license": "MIT"
+}
