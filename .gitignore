@@ -78,3 +78,6 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+# Scraped site output
+scraped/
