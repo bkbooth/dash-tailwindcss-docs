@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="en" class="bg-white antialiased"><head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Extracting Components</title>
+      <link rel="stylesheet" href="/assets/styles-tailwind.css">
+      <link rel="stylesheet" href="/assets/styles-dash.css">
+    </head>
+<body data-sidebar-visible="true" class="font-source-sans font-normal text-black leading-normal">
+
+
+
+
+
+
+
+
+<div class="w-full max-w-screen-xl mx-auto px-6">
+  <div class="lg:flex -mx-6">
+
+    
+    
+    
+
+    
+    <div id="content-wrapper" class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 ">
+
+      
+      <div id="content">
+
+        
+        <div id="app" class="flex" v-cloak>
+
+          
+          <div class="pt-24 pb-8 lg:pt-28 w-full">
+            <div class="markdown mb-6 px-6 max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+                              <h1>Extracting Components</h1>
+              
+                          </div>
+            <div class="flex">
+              <div class="markdown px-6 xl:px-12 w-full max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+                <p>Tailwind encourages a &quot;utility-first&quot; workflow, where new designs are initially implemented using only utility classes to avoid premature abstraction.</p>
+<p>While we strongly believe you can get a lot further with just utilities than you might initially expect, <strong>we don&apos;t believe that a dogmatic utility<em>-only</em> approach is the best way to write CSS.</strong></p>
+<p>For example, using a utility-first approach, implementing a button style early in a project might look something like this:</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 text-center">
+    <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded">
+  Button
+</button>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;button class=&quot;bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded&quot;&gt;
+  Button
+&lt;/button&gt;</code></pre>
+  </div>
+</div>
+<p>If this is the only button in your project, creating a custom component class for it would be premature abstraction; you&apos;d be writing new CSS for no measurable benefit.</p>
+<p>If on the other hand you were reusing this button style in several places, keeping that long list of utility classes in sync across every button instance could become a real maintenance burden.</p>
+<h2>Extracting utility patterns with @apply</h2>
+<p>When you start to notice repeating patterns of utilities in your markup, it might be worth extracting a component class.</p>
+<p>To make this as easy as possible, Tailwind provides the <code>@apply</code> directive for applying the styles of existing utilities to new component classes.</p>
+<p>Here&apos;s what a <code>.btn-blue</code> class might look like using <code>@apply</code> to compose it from existing utilities:</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 text-center">
+    <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded">
+  Button
+</button>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;button class=&quot;btn-blue&quot;&gt;
+  Button
+&lt;/button&gt;
+
+&lt;style&gt;
+.btn-blue {
+  @apply bg-blue text-white font-bold py-2 px-4 rounded;
+}
+.btn-blue:hover {
+  @apply bg-blue-dark;
+}
+&lt;/style&gt;</code></pre>
+  </div>
+</div>
+<p>Note that <code>hover:</code>, <code>focus:</code>, and <code>{screen}:</code> utility variants can&apos;t be mixed in directly. Instead, apply the plain version of the utility you need to the appropriate pseudo-selector or in a new media query.</p>
+<h2>Keeping things composable</h2>
+<p>Say you have these two buttons:</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 text-center">
+    <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded mr-4">
+  Button
+</button>
+
+<button class="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded">
+  Button
+</button>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;button class=&quot;bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded&quot;&gt;
+  Button
+&lt;/button&gt;
+
+&lt;button class=&quot;bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded&quot;&gt;
+  Button
+&lt;/button&gt;</code></pre>
+  </div>
+</div>
+<p>It might be tempting to implement component classes for these buttons like this:</p>
+<pre><code class="language-less">.btn-blue {
+  @apply bg-blue text-white font-bold py-2 px-4 rounded;
+}
+.btn-blue:hover {
+  @apply bg-blue-dark;
+}
+
+.btn-grey {
+  @apply bg-grey-light text-grey-darkest font-bold py-2 px-4 rounded;
+}
+.btn-grey:hover {
+  @apply bg-grey;
+}</code></pre>
+<p>The issue with this approach is that <strong>you still have potentially painful duplication.</strong></p>
+<p>If you wanted to change the padding, font weight, or border radius of all the buttons on your site, you&apos;d need to update every button class.</p>
+<p>A better approach is to extract the parts that are the same into a separate class:</p>
+<pre><code class="language-less">.btn {
+  @apply font-bold py-2 px-4 rounded;
+}
+
+.btn-blue {
+  @apply bg-blue text-white;
+}
+.btn-blue:hover {
+  @apply bg-blue-dark;
+}
+
+.btn-grey {
+  @apply bg-grey-light text-grey-darkest;
+}
+.btn-grey:hover {
+  @apply bg-grey;
+}</code></pre>
+<p>Now you&apos;d apply two classes any time you needed to style a button:</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 text-center">
+    <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded mr-4">
+  Button
+</button>
+
+<button class="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded">
+  Button
+</button>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;button class=&quot;btn btn-blue&quot;&gt;
+  Button
+&lt;/button&gt;
+
+&lt;button class=&quot;btn btn-grey&quot;&gt;
+  Button
+&lt;/button&gt;</code></pre>
+  </div>
+</div>
+<p>This makes it easy to change the shared styles in one place by just editing the <code>.btn</code> class.</p>
+<p>It also allows you to add new one-off button styles without being forced to create a new component class or duplicated the shared styles:</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 text-center">
+    <button class="bg-green hover:bg-green-light text-white font-bold py-2 px-4 rounded">
+  Button
+</button>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;button class=&quot;btn bg-green hover:bg-green-light text-white&quot;&gt;
+  Button
+&lt;/button&gt;</code></pre>
+  </div>
+</div>
+<h2>CSS structure</h2>
+<p>Since Tailwind&apos;s utility classes don&apos;t rely on <code>!important</code> to defeat other styles, it&apos;s important that you add your component classes <em>before</em> any utility classes in your CSS.</p>
+<p>Here&apos;s an example:</p>
+<pre><code class="language-less">@tailwind preflight;
+
+@tailwind components;
+
+.btn {
+  @apply font-bold py-2 px-4 rounded;
+}
+.btn-blue {
+  @apply bg-blue text-white;
+}
+.btn-blue:hover {
+  @apply bg-blue-dark;
+}
+
+@tailwind utilities;</code></pre>
+<p>If you&apos;re using a preprocessor like Less or Sass, consider keeping your components in separate files and importing them:</p>
+<pre><code class="language-less">@tailwind preflight;
+
+@tailwind components;
+
+@import &quot;components/buttons&quot;;
+@import &quot;components/forms&quot;;
+/* Etc. */
+
+@tailwind utilities;</code></pre>              </div>
+
+              
+              
+              
+
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+
+        
+      </div>
+      
+
+
+    </div>
+    
+
+  </div>
+</div>
+
+
+<svg style="height: 0; width: 0; position: absolute; visibility: hidden;">
+  <defs>
+    <linearGradient x1="0%" y1="0%" y2="100%" id="logoGradient">
+      <stop stop-color="#2383AE" offset="0%"/>
+      <stop stop-color="#6DD7B9" offset="100%"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+  <!-- Google Analytics  -->
+  
+  
+
+
+  <!-- Algolia DocSearch  -->
+  
+  
+
+
+
+
+
+      <script src="/assets/anchor.min.js"></script>
+      <script>
+        anchors.options.class = 'text-grey-dark';
+        anchors.add();
+      </script>
+    </body></html>

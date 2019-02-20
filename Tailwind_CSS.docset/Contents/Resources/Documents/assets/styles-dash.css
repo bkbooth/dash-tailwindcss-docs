@@ -1,0 +1,31 @@
+/*
+Style overrides to fit docs inside Dash window
+*/
+body > div:first-child {
+  padding: 1.5rem;
+  max-width: none;
+}
+body > div:first-child > div {
+  margin: 0;
+}
+
+#content-wrapper,
+#app > div > div:first-child, /* Heading and subtitle */
+#app > div > div:last-child > div:first-child /* Page content wrapper */ {
+  padding: 0;
+  width: 100%;
+  max-width: unset;
+  position: unset;
+  overflow: unset;
+}
+
+#app > div {
+  padding: 0;
+}
+
+/* Make anchor link vertical spacer smaller */
+.markdown h2:before,
+.markdown h3:before {
+  height: 1.5rem;
+  margin-top: -1.5rem;
+}

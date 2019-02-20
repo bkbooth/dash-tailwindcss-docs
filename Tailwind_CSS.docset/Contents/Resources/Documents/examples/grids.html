@@ -1,0 +1,453 @@
+<!DOCTYPE html><html lang="en" class="bg-white antialiased"><head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Grids</title>
+      <link rel="stylesheet" href="/assets/styles-tailwind.css">
+      <link rel="stylesheet" href="/assets/styles-dash.css">
+    </head>
+<body data-sidebar-visible="true" class="font-source-sans font-normal text-black leading-normal">
+
+
+
+
+
+
+
+
+<div class="w-full max-w-screen-xl mx-auto px-6">
+  <div class="lg:flex -mx-6">
+
+    
+    
+    
+
+    
+    <div id="content-wrapper" class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 ">
+
+      
+      <div id="content">
+
+        
+        <div id="app" class="flex" v-cloak>
+
+          
+          <div class="pt-24 pb-8 lg:pt-28 w-full">
+            <div class="markdown mb-6 px-6 max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+                              <h1>Grids</h1>
+              
+                              <div class="text-xl text-grey-dark mb-4">
+                  Examples of building grid layouts with Tailwind CSS.
+                </div>
+                          </div>
+            <div class="flex">
+              <div class="markdown px-6 xl:px-12 w-full max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+                <p>Tailwind doesn&apos;t include purpose-built grid classes out of the box, but grid layouts are simple to build using the existing <a href="../flexbox-display.html">Flexbox</a> and <a href="../width.html">width</a> utilities.</p>
+<h2>Basic Grids</h2>
+<p>Use the existing <a href="../flexbox-display.html">Flexbox</a> and <a href="../width.html">percentage width</a> utilities to construct basic grids.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <!-- Full width column -->
+<div class="flex mb-4">
+  <div class="w-full bg-grey h-12"></div>
+</div>
+
+<!-- Two columns -->
+<div class="flex mb-4">
+  <div class="w-1/2 bg-grey-light h-12"></div>
+  <div class="w-1/2 bg-grey h-12"></div>
+</div>
+
+<!-- Three columns -->
+<div class="flex mb-4">
+  <div class="w-1/3 bg-grey-light h-12"></div>
+  <div class="w-1/3 bg-grey h-12"></div>
+  <div class="w-1/3 bg-grey-light h-12"></div>
+</div>
+
+<!-- Four columns -->
+<div class="flex mb-4">
+  <div class="w-1/4 bg-grey h-12"></div>
+  <div class="w-1/4 bg-grey-light h-12"></div>
+  <div class="w-1/4 bg-grey h-12"></div>
+  <div class="w-1/4 bg-grey-light h-12"></div>
+</div>
+
+<!-- Five columns -->
+<div class="flex mb-4">
+  <div class="w-1/5 bg-grey h-12"></div>
+  <div class="w-1/5 bg-grey-light h-12"></div>
+  <div class="w-1/5 bg-grey h-12"></div>
+  <div class="w-1/5 bg-grey-light h-12"></div>
+  <div class="w-1/5 bg-grey h-12"></div>
+</div>
+
+<!-- Six columns -->
+<div class="flex">
+  <div class="w-1/6 bg-grey-light h-12"></div>
+  <div class="w-1/6 bg-grey h-12"></div>
+  <div class="w-1/6 bg-grey-light h-12"></div>
+  <div class="w-1/6 bg-grey h-12"></div>
+  <div class="w-1/6 bg-grey-light h-12"></div>
+  <div class="w-1/6 bg-grey h-12"></div>
+</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;!-- Full width column --&gt;
+&lt;div class=&quot;flex mb-4&quot;&gt;
+  &lt;div class=&quot;w-full bg-grey h-12&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Two columns --&gt;
+&lt;div class=&quot;flex mb-4&quot;&gt;
+  &lt;div class=&quot;w-1/2 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/2 bg-grey h-12&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Three columns --&gt;
+&lt;div class=&quot;flex mb-4&quot;&gt;
+  &lt;div class=&quot;w-1/3 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/3 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/3 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Four columns --&gt;
+&lt;div class=&quot;flex mb-4&quot;&gt;
+  &lt;div class=&quot;w-1/4 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/4 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/4 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/4 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Five columns --&gt;
+&lt;div class=&quot;flex mb-4&quot;&gt;
+  &lt;div class=&quot;w-1/5 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/5 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/5 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/5 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/5 bg-grey h-12&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Six columns --&gt;
+&lt;div class=&quot;flex&quot;&gt;
+  &lt;div class=&quot;w-1/6 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/6 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/6 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/6 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/6 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/6 bg-grey h-12&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<h2>Responsive Grids</h2>
+<p>Use the responsive variants of the width utilities to build responsive grid layouts.</p>
+<div class="mt-8 v-cloak-hidden">
+  <responsive-code-sample code="&lt;div class=&quot;flex flex-wrap&quot;&gt;
+  &lt;div class=&quot;none:w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grey&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;none:w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grey-light&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;none:w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grey&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;none:w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grey-light&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;none:w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/6 mb-4 bg-grey&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;none:w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/6 mb-4 bg-grey-light&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;" slot-class>
+    <div slot="none"><div class="flex flex-wrap">
+  <div class="h-12 w-full mb-4 bg-grey"></div>
+  <div class="h-12 w-full mb-4 bg-grey-light"></div>
+  <div class="h-12 w-full mb-4 bg-grey"></div>
+  <div class="h-12 w-full mb-4 bg-grey-light"></div>
+  <div class="h-12 w-full mb-4 bg-grey"></div>
+  <div class="h-12 w-full mb-4 bg-grey-light"></div>
+</div></div>
+    <div slot="sm"><div class="flex flex-wrap">
+  <div class="h-12 w-1/2 mb-4 bg-grey"></div>
+  <div class="h-12 w-1/2 mb-4 bg-grey-light"></div>
+  <div class="h-12 w-1/2 mb-4 bg-grey"></div>
+  <div class="h-12 w-1/2 mb-4 bg-grey-light"></div>
+  <div class="h-12 w-1/2 mb-4 bg-grey"></div>
+  <div class="h-12 w-1/2 mb-4 bg-grey-light"></div>
+</div></div>
+    <div slot="md"><div class="flex flex-wrap">
+  <div class="h-12 w-1/3 mb-4 bg-grey"></div>
+  <div class="h-12 w-1/3 mb-4 bg-grey-light"></div>
+  <div class="h-12 w-1/3 mb-4 bg-grey"></div>
+  <div class="h-12 w-1/3 mb-4 bg-grey-light"></div>
+  <div class="h-12 w-1/3 mb-4 bg-grey"></div>
+  <div class="h-12 w-1/3 mb-4 bg-grey-light"></div>
+</div></div>
+    <div slot="lg"><div class="flex flex-wrap">
+  <div class="h-12 w-1/4 mb-4 bg-grey"></div>
+  <div class="h-12 w-1/4 mb-4 bg-grey-light"></div>
+  <div class="h-12 w-1/4 mb-4 bg-grey"></div>
+  <div class="h-12 w-1/4 mb-4 bg-grey-light"></div>
+  <div class="h-12 w-1/2 mb-4 bg-grey"></div>
+  <div class="h-12 w-1/2 mb-4 bg-grey-light"></div>
+</div></div>
+    <div slot="xl"><div class="flex flex-wrap">
+  <div class="h-12 w-1/6 mb-4 bg-grey"></div>
+  <div class="h-12 w-1/6 mb-4 bg-grey-light"></div>
+  <div class="h-12 w-1/6 mb-4 bg-grey"></div>
+  <div class="h-12 w-1/6 mb-4 bg-grey-light"></div>
+  <div class="h-12 w-1/6 mb-4 bg-grey"></div>
+  <div class="h-12 w-1/6 mb-4 bg-grey-light"></div>
+</div></div>
+  </responsive-code-sample>
+</div>
+<h2>Mixed Column Sizes</h2>
+<p>Mix different percentage width utilities to build mixed size grids.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <!-- Narrower side column -->
+<div class="flex mb-4">
+  <div class="w-3/4 bg-grey h-12"></div>
+  <div class="w-1/4 bg-grey-light h-12"></div>
+</div>
+
+<!-- Wide center column -->
+<div class="flex">
+  <div class="w-1/5 bg-grey h-12"></div>
+  <div class="w-3/5 bg-grey-light h-12"></div>
+  <div class="w-1/5 bg-grey h-12"></div>
+</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;!-- Narrower side column --&gt;
+&lt;div class=&quot;flex mb-4&quot;&gt;
+  &lt;div class=&quot;w-3/4 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/4 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Wide center column --&gt;
+&lt;div class=&quot;flex&quot;&gt;
+  &lt;div class=&quot;w-1/5 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-3/5 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/5 bg-grey h-12&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<h2>Wrapping Columns</h2>
+<p>Add <code>flex-wrap</code> to your column container to allow columns to wrap when they run out of room.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <div class="flex flex-wrap -mb-4">
+  <div class="w-1/3 mb-4 bg-grey-light h-12"></div>
+  <div class="w-1/3 mb-4 bg-grey h-12"></div>
+  <div class="w-1/3 mb-4 bg-grey-light h-12"></div>
+  <div class="w-1/3 mb-4 bg-grey h-12"></div>
+  <div class="w-1/3 mb-4 bg-grey-light h-12"></div>
+</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;div class=&quot;flex flex-wrap -mb-4&quot;&gt;
+  &lt;div class=&quot;w-1/3 mb-4 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/3 mb-4 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/3 mb-4 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/3 mb-4 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/3 mb-4 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<h2>Column Spacing</h2>
+<p>Add a negative horizontal margin like <code>-mx-2</code> to your column container and an equal horizontal padding like <code>px-2</code> to each column to add gutters.</p>
+<p>To prevent horizontal scrolling in full width layouts, add <code>overflow-hidden</code> to another parent container, or compensate for the negative margin with matching horizontal padding.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <div class="px-2">
+  <div class="flex -mx-2">
+    <div class="w-1/3 px-2">
+      <div class="bg-grey-light h-12"></div>
+    </div>
+    <div class="w-1/3 px-2">
+      <div class="bg-grey h-12"></div>
+    </div>
+    <div class="w-1/3 px-2">
+      <div class="bg-grey-light h-12"></div>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;div class=&quot;px-2&quot;&gt;
+  &lt;div class=&quot;flex -mx-2&quot;&gt;
+    &lt;div class=&quot;w-1/3 px-2&quot;&gt;
+      &lt;div class=&quot;bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;w-1/3 px-2&quot;&gt;
+      &lt;div class=&quot;bg-grey h-12&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;w-1/3 px-2&quot;&gt;
+      &lt;div class=&quot;bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<h2>Automatic Column Widths</h2>
+<p>Use <code>flex-1</code> instead of an explicit width on your columns to have them size automatically to fill the row.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <!-- Full width column -->
+<div class="flex mb-4">
+  <div class="flex-1 bg-grey h-12"></div>
+</div>
+
+<!-- Five columns -->
+<div class="flex mb-4">
+  <div class="flex-1 bg-grey-light h-12"></div>
+  <div class="flex-1 bg-grey h-12"></div>
+  <div class="flex-1 bg-grey-light h-12"></div>
+  <div class="flex-1 bg-grey h-12"></div>
+  <div class="flex-1 bg-grey-light h-12"></div>
+</div>
+
+<!-- Seven columns -->
+<div class="flex mb-4">
+  <div class="flex-1 bg-grey-light h-12"></div>
+  <div class="flex-1 bg-grey h-12"></div>
+  <div class="flex-1 bg-grey-light h-12"></div>
+  <div class="flex-1 bg-grey h-12"></div>
+  <div class="flex-1 bg-grey-light h-12"></div>
+  <div class="flex-1 bg-grey h-12"></div>
+  <div class="flex-1 bg-grey-light h-12"></div>
+</div>
+
+<!-- Eleven columns -->
+<div class="flex mb-4">
+  <div class="flex-1 bg-grey-light h-12"></div>
+  <div class="flex-1 bg-grey h-12"></div>
+  <div class="flex-1 bg-grey-light h-12"></div>
+  <div class="flex-1 bg-grey h-12"></div>
+  <div class="flex-1 bg-grey-light h-12"></div>
+  <div class="flex-1 bg-grey h-12"></div>
+  <div class="flex-1 bg-grey-light h-12"></div>
+  <div class="flex-1 bg-grey h-12"></div>
+  <div class="flex-1 bg-grey-light h-12"></div>
+  <div class="flex-1 bg-grey h-12"></div>
+  <div class="flex-1 bg-grey-light h-12"></div>
+</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;!-- Full width column --&gt;
+&lt;div class=&quot;flex mb-4&quot;&gt;
+  &lt;div class=&quot;flex-1 bg-grey h-12&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Five columns --&gt;
+&lt;div class=&quot;flex mb-4&quot;&gt;
+  &lt;div class=&quot;flex-1 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Seven columns --&gt;
+&lt;div class=&quot;flex mb-4&quot;&gt;
+  &lt;div class=&quot;flex-1 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Eleven columns --&gt;
+&lt;div class=&quot;flex mb-4&quot;&gt;
+  &lt;div class=&quot;flex-1 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;flex-1 bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<h2>Column Order</h2>
+<p>Use <code>flex-row-reverse</code> to reverse column order. Useful for two-column responsive layouts where the column on right should appear first on smaller screens.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <div class="flex md:flex-row-reverse flex-wrap">
+  <div class="w-full md:w-3/4 bg-grey p-4 text-center text-grey-lighter">1</div>
+  <div class="w-full md:w-1/4 bg-grey-light p-4 text-center text-grey-darker">2</div>
+</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;div class=&quot;flex md:flex-row-reverse flex-wrap&quot;&gt;
+  &lt;div class=&quot;w-full md:w-3/4 bg-grey p-4 text-center text-grey-lighter&quot;&gt;1&lt;/div&gt;
+  &lt;div class=&quot;w-full md:w-1/4 bg-grey-light p-4 text-center text-grey-darker&quot;&gt;2&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<h2>Simple Offsets</h2>
+<p>Use auto margin utilities like <code>ml-auto</code> and <code>mr-auto</code> to offset columns in a row.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <div class="flex flex-wrap">
+  <div class="w-1/3 ml-auto bg-grey h-12"></div>
+  <div class="w-1/3 mr-auto bg-grey-light h-12"></div>
+</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;div class=&quot;flex flex-wrap&quot;&gt;
+  &lt;div class=&quot;w-1/3 ml-auto bg-grey h-12&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;w-1/3 mr-auto bg-grey-light h-12&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>              </div>
+
+              
+              
+              
+
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+
+        
+      </div>
+      
+
+
+    </div>
+    
+
+  </div>
+</div>
+
+
+<svg style="height: 0; width: 0; position: absolute; visibility: hidden;">
+  <defs>
+    <linearGradient x1="0%" y1="0%" y2="100%" id="logoGradient">
+      <stop stop-color="#2383AE" offset="0%"/>
+      <stop stop-color="#6DD7B9" offset="100%"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+  <!-- Google Analytics  -->
+  
+  
+
+
+  <!-- Algolia DocSearch  -->
+  
+  
+
+
+
+
+
+      <script src="/assets/anchor.min.js"></script>
+      <script>
+        anchors.options.class = 'text-grey-dark';
+        anchors.add();
+      </script>
+    </body></html>

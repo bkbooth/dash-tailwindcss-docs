@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="en" class="bg-white antialiased"><head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Responsive Design</title>
+      <link rel="stylesheet" href="/assets/styles-tailwind.css">
+      <link rel="stylesheet" href="/assets/styles-dash.css">
+    </head>
+<body data-sidebar-visible="true" class="font-source-sans font-normal text-black leading-normal">
+
+
+
+
+
+
+
+
+<div class="w-full max-w-screen-xl mx-auto px-6">
+  <div class="lg:flex -mx-6">
+
+    
+    
+    
+
+    
+    <div id="content-wrapper" class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 ">
+
+      
+      <div id="content">
+
+        
+        <div id="app" class="flex" v-cloak>
+
+          
+          <div class="pt-24 pb-8 lg:pt-28 w-full">
+            <div class="markdown mb-6 px-6 max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+                              <h1>Responsive Design</h1>
+              
+                          </div>
+            <div class="flex">
+              <div class="markdown px-6 xl:px-12 w-full max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+                <p>Tailwind allows you to build responsive designs in the same way you build the rest of your design &#x2014; using utility classes. Every utility in Tailwind is also available in screen-size specific variations. For example, the <code>.font-bold</code> utility can be used on small screen sizes using the <code>.sm:font-bold</code> class, on medium screen sizes using the <code>.md:font-bold</code> class, on large screen sizes using the <code>.lg:font-bold</code> class and on extra large screen sizes using the <code>.xl:font-bold</code> class.</p>
+<p>This is done using predefined screen sizes (media query breakpoints), each of which are given a unique name like <code>sm</code>, <code>md</code>, <code>lg</code> and <code>xl</code>. By default Tailwind takes a &quot;mobile first&quot; approach, where each screen size represents a minimum viewport width. Any classes you apply at smaller screen sizes are also applied to larger sizes, unless of course you override them, which is the whole point! This approach, while simple, is actually very powerful and can be used to build complex, beautiful, responsive designs.</p>
+<h2>Responsive example</h2>
+<div class="mt-8 v-cloak-hidden">
+  <responsive-code-sample code="&lt;div class=&quot;none:bg-purple none:text-white sm:bg-green md:bg-blue md:text-yellow lg:bg-red xl:bg-orange ...&quot;&gt;
+  ...
+&lt;/div&gt;" slot-class>
+    <div slot="none"><div class="flex justify-center">
+  <div class="bg-purple text-white w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
+</div></div>
+    <div slot="sm"><div class="flex justify-center">
+  <div class="bg-green text-white w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
+</div></div>
+    <div slot="md"><div class="flex justify-center">
+  <div class="bg-blue text-yellow w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
+</div></div>
+    <div slot="lg"><div class="flex justify-center">
+  <div class="bg-red text-yellow w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
+</div></div>
+    <div slot="xl"><div class="flex justify-center">
+  <div class="bg-orange text-yellow w-24 h-24 rounded-full text-xs font-semibold flex items-center justify-center">Tailwind</div>
+</div></div>
+  </responsive-code-sample>
+</div>
+<h2>Customizing screens</h2>
+<p>You define your project&apos;s screen sizes in your Tailwind config under the <code>screens</code> key. Screens in Tailwind are essentially CSS media queries. If you provide a single value for a screen, Tailwind will treat this as the minimum screen size value for that screen breakpoint.</p>
+<p>Here are the default screen sizes:</p>
+<pre><code class="language-js">screens: {
+  &apos;sm&apos;: &apos;576px&apos;,
+  // =&gt; @media (min-width: 576px) { ... }
+
+  &apos;md&apos;: &apos;768px&apos;,
+  // =&gt; @media (min-width: 768px) { ... }
+
+  &apos;lg&apos;: &apos;992px&apos;,
+  // =&gt; @media (min-width: 992px) { ... }
+
+  &apos;xl&apos;: &apos;1200px&apos;,
+  // =&gt; @media (min-width: 1200px) { ... }
+},</code></pre>
+<p>Feel free to have as few or as many screens as you want, naming them in whatever way you&apos;d prefer for your project.</p>
+<p>For example, you could use device names instead of sizes:</p>
+<pre><code class="language-js">screens: {
+  &apos;tablet&apos;: &apos;576px&apos;,
+  // =&gt; @media (min-width: 576px) { ... }
+
+  &apos;laptop&apos;: &apos;992px&apos;,
+  // =&gt; @media (min-width: 992px) { ... }
+
+  &apos;desktop&apos;: &apos;1200px&apos;,
+  // =&gt; @media (min-width: 1200px) { ... }
+},</code></pre>
+<p>These screen names will be reflected in your utilities, so your <code>.bg-red</code> utilities would now look like this:</p>
+<pre><code class="language-css">.bg-red { background-color: config(&apos;colors.red&apos;); }
+
+@media (min-width: 576px) {
+  .tablet\:bg-red { background-color: config(&apos;colors.red&apos;); }
+}
+
+@media (min-width: 992px) {
+  .laptop\:bg-red { background-color: config(&apos;colors.red&apos;); }
+}
+
+@media (min-width: 1200px) {
+  .desktop\:bg-red { background-color: config(&apos;colors.red&apos;); }
+}</code></pre>
+<h2>Advanced screens</h2>
+<p>Tailwind also allows for more complex screen definitions, which can be useful in certain situations. For example, if you wanted to define both the minimum and maximum size for your screens, you could do that like this:</p>
+<pre><code class="language-js">screens: {
+  &apos;sm&apos;: {&apos;min&apos;: &apos;576px&apos;, &apos;max&apos;: &apos;767px&apos;},
+  &apos;md&apos;: {&apos;min&apos;: &apos;768px&apos;, &apos;max&apos;: &apos;991px&apos;},
+  &apos;lg&apos;: {&apos;min&apos;: &apos;992px&apos;, &apos;max&apos;: &apos;1199px&apos;},
+  &apos;xl&apos;: {&apos;min&apos;: &apos;1200px&apos;},
+},</code></pre>
+<p>You can also provide multiple ranges per screen. This is useful in situations where you have a sidebar navigation and want to maintain consistent content breakpoints, regardless of the navigation being visible or not. Here&apos;s an example:</p>
+<pre><code class="language-js">screens: {
+  &apos;sm&apos;: &apos;500px&apos;,
+  &apos;md&apos;: [
+    // Sidebar appears at 768px, so revert to `sm:` styles between 768px
+    // and 868px, after which the main content area is wide enough again to
+    // apply the `md:` styles.
+    {&apos;min&apos;: &apos;668px&apos;, &apos;max&apos;: &apos;767px&apos;},
+    {&apos;min&apos;: &apos;868px&apos;}
+  ],
+  &apos;lg&apos;: &apos;1100px&apos;,
+  &apos;xl&apos;: &apos;1400px&apos;,
+},</code></pre>
+<h2>Print screens</h2>
+<p>As mentioned earlier, screens in Tailwind are essentially just CSS media queries. So while you normally define your screensizes in pixels, it&apos;s possible to also define non-regular screens using the <code>raw</code> key. Here is an example of how you could use this to create a print-only screen size.</p>
+<pre><code class="language-js">screens: {
+  &apos;sm&apos;: &apos;576px&apos;,
+  &apos;md&apos;: &apos;768px&apos;,
+  &apos;lg&apos;: &apos;992px&apos;,
+  &apos;xl&apos;: &apos;1200px&apos;,
+  &apos;print&apos;: {&apos;raw&apos;: &apos;print&apos;}
+},</code></pre>              </div>
+
+              
+              
+              
+
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+
+        
+      </div>
+      
+
+
+    </div>
+    
+
+  </div>
+</div>
+
+
+<svg style="height: 0; width: 0; position: absolute; visibility: hidden;">
+  <defs>
+    <linearGradient x1="0%" y1="0%" y2="100%" id="logoGradient">
+      <stop stop-color="#2383AE" offset="0%"/>
+      <stop stop-color="#6DD7B9" offset="100%"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+  <!-- Google Analytics  -->
+  
+  
+
+
+  <!-- Algolia DocSearch  -->
+  
+  
+
+
+
+
+
+      <script src="/assets/anchor.min.js"></script>
+      <script>
+        anchors.options.class = 'text-grey-dark';
+        anchors.add();
+      </script>
+    </body></html>

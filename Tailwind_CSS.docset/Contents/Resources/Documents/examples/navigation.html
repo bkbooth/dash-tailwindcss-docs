@@ -1,0 +1,349 @@
+<!DOCTYPE html><html lang="en" class="bg-white antialiased"><head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Navigation</title>
+      <link rel="stylesheet" href="/assets/styles-tailwind.css">
+      <link rel="stylesheet" href="/assets/styles-dash.css">
+    </head>
+<body data-sidebar-visible="true" class="font-source-sans font-normal text-black leading-normal">
+
+
+
+
+
+
+
+
+<div class="w-full max-w-screen-xl mx-auto px-6">
+  <div class="lg:flex -mx-6">
+
+    
+    
+    
+
+    
+    <div id="content-wrapper" class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 ">
+
+      
+      <div id="content">
+
+        
+        <div id="app" class="flex" v-cloak>
+
+          
+          <div class="pt-24 pb-8 lg:pt-28 w-full">
+            <div class="markdown mb-6 px-6 max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+                              <h1>Navigation</h1>
+              
+                              <div class="text-xl text-grey-dark mb-4">
+                  Examples of building navigation components with Tailwind CSS.
+                </div>
+                          </div>
+            <div class="flex">
+              <div class="markdown px-6 xl:px-12 w-full max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+                <p>Tailwind doesn&apos;t include pre-designed navigation components out of the box, but they&apos;re easy to build using existing utilities.</p>
+<h2>Simple</h2>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <ul class="list-reset flex">
+  <li class="mr-6">
+    <a class="text-blue hover:text-blue-darker" href="navigation.html#">Active</a>
+  </li>
+  <li class="mr-6">
+    <a class="text-blue hover:text-blue-darker" href="navigation.html#">Link</a>
+  </li>
+  <li class="mr-6">
+    <a class="text-blue hover:text-blue-darker" href="navigation.html#">Link</a>
+  </li>
+  <li class="mr-6">
+    <a class="text-grey-light cursor-not-allowed" href="navigation.html#">Disabled</a>
+  </li>
+</ul>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;ul class=&quot;list-reset flex&quot;&gt;
+  &lt;li class=&quot;mr-6&quot;&gt;
+    &lt;a class=&quot;text-blue hover:text-blue-darker&quot; href=&quot;#&quot;&gt;Active&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mr-6&quot;&gt;
+    &lt;a class=&quot;text-blue hover:text-blue-darker&quot; href=&quot;#&quot;&gt;Link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mr-6&quot;&gt;
+    &lt;a class=&quot;text-blue hover:text-blue-darker&quot; href=&quot;#&quot;&gt;Link&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mr-6&quot;&gt;
+    &lt;a class=&quot;text-grey-light cursor-not-allowed&quot; href=&quot;#&quot;&gt;Disabled&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  </div>
+</div>
+<h2>Responsive Header</h2>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <div class="mb-6 lg:hidden">
+  <p class="text-sm text-grey-dark mb-1">Collapsed</p>
+  <nav class="flex items-center justify-between flex-wrap bg-teal p-6">
+    <div class="flex items-center flex-no-shrink text-white mr-6">
+      <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
+      <span class="font-semibold text-xl tracking-tight">Tailwind CSS</span>
+    </div>
+    <div class="block lg:hidden">
+      <button class="flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+      </button>
+    </div>
+    <div class="w-full hidden flex-grow lg:flex lg:items-center lg:w-auto">
+      <div class="text-sm lg:flex-grow">
+        <a href="navigation.html#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">
+          Docs
+        </a>
+        <a href="navigation.html#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">
+          Examples
+        </a>
+        <a href="navigation.html#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white">
+          Blog
+        </a>
+      </div>
+      <div>
+        <a href="navigation.html#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0">Download</a>
+      </div>
+    </div>
+  </nav>
+</div>  
+
+<div>
+  <p class="text-sm text-grey-dark mb-1 lg:hidden">Expanded</p>
+  <nav class="flex items-center justify-between flex-wrap bg-teal p-6">
+    <div class="flex items-center flex-no-shrink text-white mr-6">
+      <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
+      <span class="font-semibold text-xl tracking-tight">Tailwind CSS</span>
+    </div>
+    <div class="block lg:hidden">
+      <button class="flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+      </button>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div class="text-sm lg:flex-grow">
+        <a href="navigation.html#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">
+          Docs
+        </a>
+        <a href="navigation.html#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">
+          Examples
+        </a>
+        <a href="navigation.html#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white">
+          Blog
+        </a>
+      </div>
+      <div>
+        <a href="navigation.html#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0">Download</a>
+      </div>
+    </div>
+  </nav>
+</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;nav class=&quot;flex items-center justify-between flex-wrap bg-teal p-6&quot;&gt;
+  &lt;div class=&quot;flex items-center flex-no-shrink text-white mr-6&quot;&gt;
+    &lt;svg class=&quot;fill-current h-8 w-8 mr-2&quot; width=&quot;54&quot; height=&quot;54&quot; viewBox=&quot;0 0 54 54&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path d=&quot;M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z&quot;/&gt;&lt;/svg&gt;
+    &lt;span class=&quot;font-semibold text-xl tracking-tight&quot;&gt;Tailwind CSS&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;block lg:hidden&quot;&gt;
+    &lt;button class=&quot;flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white&quot;&gt;
+      &lt;svg class=&quot;fill-current h-3 w-3&quot; viewBox=&quot;0 0 20 20&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;title&gt;Menu&lt;/title&gt;&lt;path d=&quot;M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z&quot;/&gt;&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;w-full block flex-grow lg:flex lg:items-center lg:w-auto&quot;&gt;
+    &lt;div class=&quot;text-sm lg:flex-grow&quot;&gt;
+      &lt;a href=&quot;#responsive-header&quot; class=&quot;block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4&quot;&gt;
+        Docs
+      &lt;/a&gt;
+      &lt;a href=&quot;#responsive-header&quot; class=&quot;block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4&quot;&gt;
+        Examples
+      &lt;/a&gt;
+      &lt;a href=&quot;#responsive-header&quot; class=&quot;block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white&quot;&gt;
+        Blog
+      &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;a href=&quot;#&quot; class=&quot;inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0&quot;&gt;Download&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+  </div>
+</div>
+<h2>Tabs</h2>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <ul class="list-reset flex border-b">
+  <li class="-mb-px mr-1">
+    <a class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-dark font-semibold" href="navigation.html#">Active</a>
+  </li>
+  <li class="mr-1">
+    <a class="bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker font-semibold" href="navigation.html#">Tab</a>
+  </li>
+  <li class="mr-1">
+    <a class="bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker font-semibold" href="navigation.html#">Tab</a>
+  </li>
+  <li class="mr-1">
+    <a class="bg-white inline-block py-2 px-4 text-grey-light font-semibold" href="navigation.html#">Tab</a>
+  </li>
+</ul>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;ul class=&quot;list-reset flex border-b&quot;&gt;
+  &lt;li class=&quot;-mb-px mr-1&quot;&gt;
+    &lt;a class=&quot;bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-dark font-semibold&quot; href=&quot;#&quot;&gt;Active&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mr-1&quot;&gt;
+    &lt;a class=&quot;bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker font-semibold&quot; href=&quot;#&quot;&gt;Tab&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mr-1&quot;&gt;
+    &lt;a class=&quot;bg-white inline-block py-2 px-4 text-blue hover:text-blue-darker font-semibold&quot; href=&quot;#&quot;&gt;Tab&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mr-1&quot;&gt;
+    &lt;a class=&quot;bg-white inline-block py-2 px-4 text-grey-light font-semibold&quot; href=&quot;#&quot;&gt;Tab&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  </div>
+</div>
+<h2>Pills</h2>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <ul class="list-reset flex">
+  <li class="mr-3">
+    <a class="inline-block border border-blue rounded py-1 px-3 bg-blue text-white" href="navigation.html#">Active Pill</a>
+  </li>
+  <li class="mr-3">
+    <a class="inline-block border border-white rounded hover:border-grey-lighter text-blue hover:bg-grey-lighter py-1 px-3" href="navigation.html#">Pill</a>
+  </li>
+  <li class="mr-3">
+    <a class="inline-block py-1 px-3 text-grey-light cursor-not-allowed" href="navigation.html#">Disabled Pill</a>
+  </li>
+</ul>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;ul class=&quot;list-reset flex&quot;&gt;
+  &lt;li class=&quot;mr-3&quot;&gt;
+    &lt;a class=&quot;inline-block border border-blue rounded py-1 px-3 bg-blue text-white&quot; href=&quot;#&quot;&gt;Active Pill&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mr-3&quot;&gt;
+    &lt;a class=&quot;inline-block border border-white rounded hover:border-grey-lighter text-blue hover:bg-grey-lighter py-1 px-3&quot; href=&quot;#&quot;&gt;Pill&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mr-3&quot;&gt;
+    &lt;a class=&quot;inline-block py-1 px-3 text-grey-light cursor-not-allowed&quot; href=&quot;#&quot;&gt;Disabled Pill&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  </div>
+</div>
+<h2>Stretched</h2>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <ul class="list-reset flex">
+  <li class="flex-1 mr-2">
+    <a class="text-center block border border-blue rounded py-2 px-4 bg-blue hover:bg-blue-dark text-white" href="navigation.html#">Active Item</a>
+  </li>
+  <li class="flex-1 mr-2">
+    <a class="text-center block border border-white rounded hover:border-grey-lighter text-blue hover:bg-grey-lighter py-2 px-4" href="navigation.html#">Nav Item</a>
+  </li>
+  <li class="text-center flex-1">
+    <a class="block py-2 px-4 text-grey-light cursor-not-allowed" href="navigation.html#">Disabled Item</a>
+  </li>
+</ul>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;ul class=&quot;list-reset flex&quot;&gt;
+  &lt;li class=&quot;flex-1 mr-2&quot;&gt;
+    &lt;a class=&quot;text-center block border border-blue rounded py-2 px-4 bg-blue hover:bg-blue-dark text-white&quot; href=&quot;#&quot;&gt;Active Item&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;flex-1 mr-2&quot;&gt;
+    &lt;a class=&quot;text-center block border border-white rounded hover:border-grey-lighter text-blue hover:bg-grey-lighter py-2 px-4&quot; href=&quot;#&quot;&gt;Nav Item&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;text-center flex-1&quot;&gt;
+    &lt;a class=&quot;block py-2 px-4 text-grey-light cursor-not-allowed&quot; href=&quot;#&quot;&gt;Disabled Item&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  </div>
+</div>
+<h2>Justified</h2>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <ul class="list-reset flex justify-between">
+  <li class="mr-3">
+    <a class="inline-block border border-blue rounded py-2 px-4 bg-blue hover:bg-blue-dark text-white" href="navigation.html#">Active Pill</a>
+  </li>
+  <li class="mr-3">
+    <a class="inline-block border border-white rounded hover:border-grey-lighter text-blue hover:bg-grey-lighter py-2 px-4" href="navigation.html#">Pill</a>
+  </li>
+  <li class="mr-3">
+    <a class="inline-block py-2 px-4 text-grey-light cursor-not-allowed" href="navigation.html#">Disabled Pill</a>
+  </li>
+</ul>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;ul class=&quot;list-reset flex justify-between&quot;&gt;
+  &lt;li class=&quot;mr-3&quot;&gt;
+    &lt;a class=&quot;inline-block border border-blue rounded py-2 px-4 bg-blue hover:bg-blue-dark text-white&quot; href=&quot;#&quot;&gt;Active Pill&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mr-3&quot;&gt;
+    &lt;a class=&quot;inline-block border border-white rounded hover:border-grey-lighter text-blue hover:bg-grey-lighter py-2 px-4&quot; href=&quot;#&quot;&gt;Pill&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;mr-3&quot;&gt;
+    &lt;a class=&quot;inline-block py-2 px-4 text-grey-light cursor-not-allowed&quot; href=&quot;#&quot;&gt;Disabled Pill&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  </div>
+</div>              </div>
+
+              
+              
+              
+
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+
+        
+      </div>
+      
+
+
+    </div>
+    
+
+  </div>
+</div>
+
+
+<svg style="height: 0; width: 0; position: absolute; visibility: hidden;">
+  <defs>
+    <linearGradient x1="0%" y1="0%" y2="100%" id="logoGradient">
+      <stop stop-color="#2383AE" offset="0%"/>
+      <stop stop-color="#6DD7B9" offset="100%"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+  <!-- Google Analytics  -->
+  
+  
+
+
+  <!-- Algolia DocSearch  -->
+  
+  
+
+
+
+
+
+      <script src="/assets/anchor.min.js"></script>
+      <script>
+        anchors.options.class = 'text-grey-dark';
+        anchors.add();
+      </script>
+    </body></html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html><html lang="en" class="bg-white antialiased"><head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Forms</title>
+      <link rel="stylesheet" href="/assets/styles-tailwind.css">
+      <link rel="stylesheet" href="/assets/styles-dash.css">
+    </head>
+<body data-sidebar-visible="true" class="font-source-sans font-normal text-black leading-normal">
+
+
+
+
+
+
+
+
+<div class="w-full max-w-screen-xl mx-auto px-6">
+  <div class="lg:flex -mx-6">
+
+    
+    
+    
+
+    
+    <div id="content-wrapper" class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 ">
+
+      
+      <div id="content">
+
+        
+        <div id="app" class="flex" v-cloak>
+
+          
+          <div class="pt-24 pb-8 lg:pt-28 w-full">
+            <div class="markdown mb-6 px-6 max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+                              <h1>Forms</h1>
+              
+                              <div class="text-xl text-grey-dark mb-4">
+                  Examples of building forms with Tailwind CSS.
+                </div>
+                          </div>
+            <div class="flex">
+              <div class="markdown px-6 xl:px-12 w-full max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+                <p>Tailwind doesn&apos;t include purpose-built form control classes out of the box, but form controls are easy to style using existing utilities.</p>
+<h2>Login Form</h2>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 px-3 py-10 bg-grey-lighter flex justify-center">
+    <div class="w-full max-w-xs">
+  <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div class="mb-4">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
+        Username
+      </label>
+      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username">
+    </div>
+    <div class="mb-6">
+      <label class="block text-grey-darker text-sm font-bold mb-2" for="password">
+        Password
+      </label>
+      <input class="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************">
+      <p class="text-red text-xs italic">Please choose a password.</p>
+    </div>
+    <div class="flex items-center justify-between">
+      <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+        Sign In
+      </button>
+      <a class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker" href="forms.html#">
+        Forgot Password?
+      </a>
+    </div>
+  </form>
+  <p class="text-center text-grey text-xs">
+    &#xA9;2019 Acme Corp. All rights reserved.
+  </p>
+</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;div class=&quot;w-full max-w-xs&quot;&gt;
+  &lt;form class=&quot;bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4&quot;&gt;
+    &lt;div class=&quot;mb-4&quot;&gt;
+      &lt;label class=&quot;block text-grey-darker text-sm font-bold mb-2&quot; for=&quot;username&quot;&gt;
+        Username
+      &lt;/label&gt;
+      &lt;input class=&quot;shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline&quot; id=&quot;username&quot; type=&quot;text&quot; placeholder=&quot;Username&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mb-6&quot;&gt;
+      &lt;label class=&quot;block text-grey-darker text-sm font-bold mb-2&quot; for=&quot;password&quot;&gt;
+        Password
+      &lt;/label&gt;
+      &lt;input class=&quot;shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3 leading-tight focus:outline-none focus:shadow-outline&quot; id=&quot;password&quot; type=&quot;password&quot; placeholder=&quot;******************&quot;&gt;
+      &lt;p class=&quot;text-red text-xs italic&quot;&gt;Please choose a password.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;flex items-center justify-between&quot;&gt;
+      &lt;button class=&quot;bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline&quot; type=&quot;button&quot;&gt;
+        Sign In
+      &lt;/button&gt;
+      &lt;a class=&quot;inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker&quot; href=&quot;#&quot;&gt;
+        Forgot Password?
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+  &lt;p class=&quot;text-center text-grey text-xs&quot;&gt;
+    &#xA9;2019 Acme Corp. All rights reserved.
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<h2>Inline Form</h2>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 flex justify-center p-8">
+    <form class="w-full max-w-xs">
+  <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/3">
+      <label class="block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+        Full Name
+      </label>
+    </div>
+    <div class="md:w-2/3">
+      <input class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" id="inline-full-name" type="text" value="Jane Doe">
+    </div>
+  </div>
+  <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/3">
+      <label class="block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-username">
+        Password
+      </label>
+    </div>
+    <div class="md:w-2/3">
+      <input class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" id="inline-username" type="password" placeholder="******************">
+    </div>
+  </div>
+  <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/3"></div>
+    <label class="md:w-2/3 block text-grey font-bold">
+      <input class="mr-2 leading-tight" type="checkbox">
+      <span class="text-sm">
+        Send me your newsletter!
+      </span>
+    </label>
+  </div>
+  <div class="md:flex md:items-center">
+    <div class="md:w-1/3"></div>
+    <div class="md:w-2/3">
+      <button class="shadow bg-purple hover:bg-purple-light focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+        Sign Up
+      </button>
+    </div>
+  </div>
+</form>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;form class=&quot;w-full max-w-xs&quot;&gt;
+  &lt;div class=&quot;md:flex md:items-center mb-6&quot;&gt;
+    &lt;div class=&quot;md:w-1/3&quot;&gt;
+      &lt;label class=&quot;block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4&quot; for=&quot;inline-full-name&quot;&gt;
+        Full Name
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;md:w-2/3&quot;&gt;
+      &lt;input class=&quot;bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple&quot; id=&quot;inline-full-name&quot; type=&quot;text&quot; value=&quot;Jane Doe&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;md:flex md:items-center mb-6&quot;&gt;
+    &lt;div class=&quot;md:w-1/3&quot;&gt;
+      &lt;label class=&quot;block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4&quot; for=&quot;inline-username&quot;&gt;
+        Password
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;md:w-2/3&quot;&gt;
+      &lt;input class=&quot;bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple&quot; id=&quot;inline-username&quot; type=&quot;password&quot; placeholder=&quot;******************&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;md:flex md:items-center mb-6&quot;&gt;
+    &lt;div class=&quot;md:w-1/3&quot;&gt;&lt;/div&gt;
+    &lt;label class=&quot;md:w-2/3 block text-grey font-bold&quot;&gt;
+      &lt;input class=&quot;mr-2 leading-tight&quot; type=&quot;checkbox&quot;&gt;
+      &lt;span class=&quot;text-sm&quot;&gt;
+        Send me your newsletter!
+      &lt;/span&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;md:flex md:items-center&quot;&gt;
+    &lt;div class=&quot;md:w-1/3&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;md:w-2/3&quot;&gt;
+      &lt;button class=&quot;shadow bg-purple hover:bg-purple-light focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded&quot; type=&quot;button&quot;&gt;
+        Sign Up
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+  </div>
+</div>
+<h2>Form Grid</h2>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 flex justify-center p-8">
+    <form class="w-full max-w-md">
+  <div class="flex flex-wrap -mx-3 mb-6">
+    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-first-name">
+        First Name
+      </label>
+      <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane">
+      <p class="text-red text-xs italic">Please fill out this field.</p>
+    </div>
+    <div class="w-full md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+        Last Name
+      </label>
+      <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" id="grid-last-name" type="text" placeholder="Doe">
+    </div>
+  </div>
+  <div class="flex flex-wrap -mx-3 mb-6">
+    <div class="w-full px-3">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
+        Password
+      </label>
+      <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey" id="grid-password" type="password" placeholder="******************">
+      <p class="text-grey-dark text-xs italic">Make it as long and as crazy as you&apos;d like</p>
+    </div>
+  </div>
+  <div class="flex flex-wrap -mx-3 mb-2">
+    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-city">
+        City
+      </label>
+      <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" id="grid-city" type="text" placeholder="Albuquerque">
+    </div>
+    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-state">
+        State
+      </label>
+      <div class="relative">
+        <select class="block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-grey" id="grid-state">
+          <option>New Mexico</option>
+          <option>Missouri</option>
+          <option>Texas</option>
+        </select>
+        <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-zip">
+        Zip
+      </label>
+      <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey" id="grid-zip" type="text" placeholder="90210">
+    </div>
+  </div>
+</form>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;form class=&quot;w-full max-w-md&quot;&gt;
+  &lt;div class=&quot;flex flex-wrap -mx-3 mb-6&quot;&gt;
+    &lt;div class=&quot;w-full md:w-1/2 px-3 mb-6 md:mb-0&quot;&gt;
+      &lt;label class=&quot;block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2&quot; for=&quot;grid-first-name&quot;&gt;
+        First Name
+      &lt;/label&gt;
+      &lt;input class=&quot;appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white&quot; id=&quot;grid-first-name&quot; type=&quot;text&quot; placeholder=&quot;Jane&quot;&gt;
+      &lt;p class=&quot;text-red text-xs italic&quot;&gt;Please fill out this field.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;w-full md:w-1/2 px-3&quot;&gt;
+      &lt;label class=&quot;block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2&quot; for=&quot;grid-last-name&quot;&gt;
+        Last Name
+      &lt;/label&gt;
+      &lt;input class=&quot;appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey&quot; id=&quot;grid-last-name&quot; type=&quot;text&quot; placeholder=&quot;Doe&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;flex flex-wrap -mx-3 mb-6&quot;&gt;
+    &lt;div class=&quot;w-full px-3&quot;&gt;
+      &lt;label class=&quot;block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2&quot; for=&quot;grid-password&quot;&gt;
+        Password
+      &lt;/label&gt;
+      &lt;input class=&quot;appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-grey&quot; id=&quot;grid-password&quot; type=&quot;password&quot; placeholder=&quot;******************&quot;&gt;
+      &lt;p class=&quot;text-grey-dark text-xs italic&quot;&gt;Make it as long and as crazy as you&apos;d like&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;flex flex-wrap -mx-3 mb-2&quot;&gt;
+    &lt;div class=&quot;w-full md:w-1/3 px-3 mb-6 md:mb-0&quot;&gt;
+      &lt;label class=&quot;block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2&quot; for=&quot;grid-city&quot;&gt;
+        City
+      &lt;/label&gt;
+      &lt;input class=&quot;appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey&quot; id=&quot;grid-city&quot; type=&quot;text&quot; placeholder=&quot;Albuquerque&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;w-full md:w-1/3 px-3 mb-6 md:mb-0&quot;&gt;
+      &lt;label class=&quot;block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2&quot; for=&quot;grid-state&quot;&gt;
+        State
+      &lt;/label&gt;
+      &lt;div class=&quot;relative&quot;&gt;
+        &lt;select class=&quot;block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-grey&quot; id=&quot;grid-state&quot;&gt;
+          &lt;option&gt;New Mexico&lt;/option&gt;
+          &lt;option&gt;Missouri&lt;/option&gt;
+          &lt;option&gt;Texas&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;div class=&quot;pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker&quot;&gt;
+          &lt;svg class=&quot;fill-current h-4 w-4&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 20 20&quot;&gt;&lt;path d=&quot;M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z&quot;/&gt;&lt;/svg&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;w-full md:w-1/3 px-3 mb-6 md:mb-0&quot;&gt;
+      &lt;label class=&quot;block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2&quot; for=&quot;grid-zip&quot;&gt;
+        Zip
+      &lt;/label&gt;
+      &lt;input class=&quot;appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-grey&quot; id=&quot;grid-zip&quot; type=&quot;text&quot; placeholder=&quot;90210&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+  </div>
+</div>
+<h2>Underline Form</h2>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 flex justify-center p-8">
+    <form class="w-full max-w-sm">
+  <div class="flex items-center border-b border-b-2 border-teal py-2">
+    <input class="appearance-none bg-transparent border-none w-full text-grey-darker mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Jane Doe" aria-label="Full name">
+    <button class="flex-no-shrink bg-teal hover:bg-teal-dark border-teal hover:border-teal-dark text-sm border-4 text-white py-1 px-2 rounded" type="button">
+      Sign Up
+    </button>
+    <button class="flex-no-shrink border-transparent border-4 text-teal hover:text-teal-darker text-sm py-1 px-2 rounded" type="button">
+      Cancel
+    </button>
+  </div>
+</form>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;form class=&quot;w-full max-w-sm&quot;&gt;
+  &lt;div class=&quot;flex items-center border-b border-b-2 border-teal py-2&quot;&gt;
+    &lt;input class=&quot;appearance-none bg-transparent border-none w-full text-grey-darker mr-3 py-1 px-2 leading-tight focus:outline-none&quot; type=&quot;text&quot; placeholder=&quot;Jane Doe&quot; aria-label=&quot;Full name&quot;&gt;
+    &lt;button class=&quot;flex-no-shrink bg-teal hover:bg-teal-dark border-teal hover:border-teal-dark text-sm border-4 text-white py-1 px-2 rounded&quot; type=&quot;button&quot;&gt;
+      Sign Up
+    &lt;/button&gt;
+    &lt;button class=&quot;flex-no-shrink border-transparent border-4 text-teal hover:text-teal-darker text-sm py-1 px-2 rounded&quot; type=&quot;button&quot;&gt;
+      Cancel
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+  </div>
+</div>
+<h2>Custom Select</h2>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 text-center">
+    <div class="inline-block relative w-64">
+  <select class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+    <option>Really long option that will likely overlap the chevron</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </select>
+  <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+  </div>
+</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;div class=&quot;inline-block relative w-64&quot;&gt;
+  &lt;select class=&quot;block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline&quot;&gt;
+    &lt;option&gt;Really long option that will likely overlap the chevron&lt;/option&gt;
+    &lt;option&gt;Option 2&lt;/option&gt;
+    &lt;option&gt;Option 3&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;div class=&quot;pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker&quot;&gt;
+    &lt;svg class=&quot;fill-current h-4 w-4&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 20 20&quot;&gt;&lt;path d=&quot;M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z&quot;/&gt;&lt;/svg&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>              </div>
+
+              
+              
+              
+
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+
+        
+      </div>
+      
+
+
+    </div>
+    
+
+  </div>
+</div>
+
+
+<svg style="height: 0; width: 0; position: absolute; visibility: hidden;">
+  <defs>
+    <linearGradient x1="0%" y1="0%" y2="100%" id="logoGradient">
+      <stop stop-color="#2383AE" offset="0%"/>
+      <stop stop-color="#6DD7B9" offset="100%"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+  <!-- Google Analytics  -->
+  
+  
+
+
+  <!-- Algolia DocSearch  -->
+  
+  
+
+
+
+
+
+      <script src="/assets/anchor.min.js"></script>
+      <script>
+        anchors.options.class = 'text-grey-dark';
+        anchors.add();
+      </script>
+    </body></html>

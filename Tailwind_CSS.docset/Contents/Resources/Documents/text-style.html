@@ -1,0 +1,331 @@
+<!DOCTYPE html><html lang="en" class="bg-white antialiased"><head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Style &amp; Decoration</title>
+      <link rel="stylesheet" href="/assets/styles-tailwind.css">
+      <link rel="stylesheet" href="/assets/styles-dash.css">
+    </head>
+<body data-sidebar-visible="true" class="font-source-sans font-normal text-black leading-normal">
+
+
+
+
+
+
+
+
+<div class="w-full max-w-screen-xl mx-auto px-6">
+  <div class="lg:flex -mx-6">
+
+    
+    
+    
+
+    
+    <div id="content-wrapper" class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 ">
+
+      
+      <div id="content">
+
+        
+        <div id="app" class="flex" v-cloak>
+
+          
+          <div class="pt-24 pb-8 lg:pt-28 w-full">
+            <div class="markdown mb-6 px-6 max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+                              <h1>Style &amp; Decoration</h1>
+              
+                              <div class="text-xl text-grey-dark mb-4">
+                  Utilities for controlling the style of text.
+                </div>
+                          </div>
+            <div class="flex">
+              <div class="markdown px-6 xl:px-12 w-full max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+                <h2 style="visibility: hidden; font-size: 0; margin: 0;">Class reference</h2>
+<div class="border-t border-b border-grey-light overflow-hidden relative">
+  <div class=" overflow-y-auto scrollbar-w-2 scrollbar-track-grey-lighter scrollbar-thumb-rounded scrollbar-thumb-grey scrolling-touch">
+    <table class="w-full text-left table-collapse">
+      <thead>
+        <tr>
+          <th class="text-sm font-semibold text-grey-darker p-2 bg-grey-lightest">Class</th>
+          <th class="text-sm font-semibold text-grey-darker p-2 bg-grey-lightest">Properties</th>
+        </tr>
+      </thead>
+      <tbody class="align-baseline">
+                <tr>
+          <td class="p-2 border-t border-grey-light font-mono text-xs text-purple-dark whitespace-no-wrap">.italic</td>
+          <td class="p-2 border-t border-grey-light font-mono text-xs text-blue-dark whitespace-pre">font-style: italic;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.roman</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">font-style: normal;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.uppercase</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">text-transform: uppercase;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.lowercase</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">text-transform: lowercase;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.capitalize</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">text-transform: capitalize;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.normal-case</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">text-transform: none;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.underline</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">text-decoration: underline;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.line-through</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">text-decoration: line-through;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.no-underline</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">text-decoration: none;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.antialiased</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.subpixel-antialiased</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">-webkit-font-smoothing: auto;
+-moz-osx-font-smoothing: auto;</td>
+        </tr>
+              </tbody>
+    </table>
+  </div>
+</div>
+<h2>Italics</h2>
+<p>Use the <code>.italic</code> utility to make text italic.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <p class="italic text-lg text-grey-darkest">The quick brown fox jumped over the lazy dog.</p>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;p class=&quot;italic ...&quot;&gt;The quick brown fox ...&lt;/p&gt;</code></pre>
+  </div>
+</div>
+<p>Use the <code>.roman</code> utility to display text normally. This is typically used to reset italic text at different breakpoints.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <p class="roman text-lg text-grey-darkest">The quick brown fox jumped over the lazy dog.</p>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;p class=&quot;roman ...&quot;&gt;The quick brown fox ...&lt;/p&gt;</code></pre>
+  </div>
+</div>
+<h2>Capitalization</h2>
+<p>Use the <code>.uppercase</code> utility to uppercase text.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <p class="uppercase text-lg text-grey-darkest">The quick brown fox jumped over the lazy dog.</p>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;p class=&quot;uppercase ...&quot;&gt;The quick brown fox ...&lt;/p&gt;</code></pre>
+  </div>
+</div>
+<p>Use the <code>.lowercase</code> utility to lowercase text.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <p class="lowercase text-lg text-grey-darkest">The quick brown fox jumped over the lazy dog.</p>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;p class=&quot;lowercase ...&quot;&gt;The quick brown fox ...&lt;/p&gt;</code></pre>
+  </div>
+</div>
+<p>Use the <code>.capitalize</code> utility to capitalize text.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <p class="capitalize text-lg text-grey-darkest">The quick brown fox jumped over the lazy dog.</p>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;p class=&quot;capitalize ...&quot;&gt;The quick brown fox ...&lt;/p&gt;</code></pre>
+  </div>
+</div>
+<p>Use the <code>.normal-case</code> utility to preserve the original casing. This is typically used to reset capitalization at different breakpoints.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <p class="normal-case text-lg text-grey-darkest">The quick brown fox jumped over the lazy dog.</p>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;p class=&quot;normal-case ...&quot;&gt;The quick brown fox ...&lt;/p&gt;</code></pre>
+  </div>
+</div>
+<h2>Underlines</h2>
+<p>Use the <code>.underline</code> utility to underline text.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <p class="underline text-lg text-grey-darkest">The quick brown fox jumped over the lazy dog.</p>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;p class=&quot;underline ...&quot;&gt;The quick brown fox ...&lt;/p&gt;</code></pre>
+  </div>
+</div>
+<p>Use the <code>.line-through</code> utility to strike out text.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <p class="line-through text-lg text-grey-darkest">The quick brown fox jumped over the lazy dog.</p>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;p class=&quot;line-through ...&quot;&gt;The quick brown fox ...&lt;/p&gt;</code></pre>
+  </div>
+</div>
+<p>Use the <code>.no-underline</code> utility to remove underline or line-through styling.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <div class="text-center">
+  <a href="text-style.html#" class="no-underline text-blue text-lg">Link with no underline</a>
+</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;a href=&quot;#&quot; class=&quot;no-underline ...&quot;&gt;Link with no underline&lt;/a&gt;</code></pre>
+  </div>
+</div>
+<h2>Antialiasing</h2>
+<p>Use the <code>.antialiased</code> utility to render text using grayscale antialiasing.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <p class="antialiased text-lg text-grey-darkest">The quick brown fox jumped over the lazy dog.</p>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;p class=&quot;antialiased ...&quot;&gt;The quick brown fox ...&lt;/p&gt;</code></pre>
+  </div>
+</div>
+<p>Use the <code>.subpixel-antialiased</code> utility to render text using subpixel antialiasing.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <p class="subpixel-antialiased text-lg text-grey-darkest">The quick brown fox jumped over the lazy dog.</p>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;p class=&quot;subpixel-antialiased ...&quot;&gt;The quick brown fox ...&lt;/p&gt;</code></pre>
+  </div>
+</div>
+<h2>Responsive</h2>
+<p>To control the style and decoration of an element at a specific breakpoint, add a <code>{screen}:</code> prefix to any existing style and decoration utility. For example, use <code>md:underline</code> to apply the <code>underline</code> utility at only medium screen sizes and above.</p>
+<p>For more information about Tailwind&apos;s responsive design features, check out the <a href="responsive-design.html">Responsive Design</a> documentation.</p>
+<div class="mt-8 v-cloak-hidden">
+  <responsive-code-sample code="&lt;p class=&quot;none:underline sm:no-underline md:uppercase lg:normal-case xl:italic ...&quot;&gt;The quick brown fox jumped over the lazy dog.&lt;/p&gt;" slot-class>
+    <div slot="none"><p class="underline text-lg text-grey-darkest">The quick brown fox jumped over the lazy dog.</p></div>
+    <div slot="sm"><p class="no-underline text-lg text-grey-darkest">The quick brown fox jumped over the lazy dog.</p></div>
+    <div slot="md"><p class="uppercase text-lg text-grey-darkest">The quick brown fox jumped over the lazy dog.</p></div>
+    <div slot="lg"><p class="normal-case text-lg text-grey-darkest">The quick brown fox jumped over the lazy dog.</p></div>
+    <div slot="xl"><p class="italic text-lg text-grey-darkest">The quick brown fox jumped over the lazy dog.</p></div>
+  </responsive-code-sample>
+</div>
+<h2>Hover</h2>
+<p>To control the style and decoration of an element on hover, add the <code>hover:</code> prefix to any existing style and decoration utility. For example, use <code>hover:underline</code> to apply the <code>underline</code> utility on hover.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 text-center">
+    <a href="text-style.html#hover" class="no-underline hover:underline text-blue text-lg">Link</a>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;a href=&quot;#hover&quot; class=&quot;no-underline hover:underline text-blue text-lg&quot;&gt;Link&lt;/a&gt;</code></pre>
+  </div>
+</div>
+<p>Hover utilities can also be combined with responsive utilities by adding the responsive <code>{screen}:</code> prefix <em>before</em> the <code>hover:</code> prefix.</p>
+<pre><code class="language-html">&lt;a href=&quot;#&quot; class=&quot;... md:no-underline md:hover:underline ...&quot;&gt;Link&lt;/a&gt;</code></pre>
+<h2>Focus</h2>
+<p>To control the style and decoration of an element on focus, add the <code>focus:</code> prefix to any existing style and decoration utility. For example, use <code>focus:uppercase</code> to apply the <code>uppercase</code> utility on focus.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <div class="max-w-xs w-full mx-auto">
+  <input class="bg-white focus:uppercase focus:shadow-outline text-black appearance-none inline-block w-full text-black border rounded py-3 px-4 focus:outline-none" value="Focus me" placeholder="Focus me">
+</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;input class=&quot;focus:uppercase ...&quot; value=&quot;Focus me&quot;&gt;</code></pre>
+  </div>
+</div>
+<p>Focus utilities can also be combined with responsive utilities by adding the responsive <code>{screen}:</code> prefix <em>before</em> the <code>focus:</code> prefix.</p>
+<pre><code class="language-html">&lt;input class=&quot;md:focus:uppercase ...&quot; value=&quot;Focus me&quot;&gt;</code></pre>
+<h2>Customizing</h2>
+<h3>Responsive and State Variants</h3>
+<p>By default, only responsive, hover and focus variants are generated for text style utilities.</p>
+<p>You can control which variants are generated for the text style utilities by modifying the <code>textStyle</code> property in the <code>modules</code> section of your Tailwind config file.</p>
+<p>For example, this config will also generate  variants:</p>
+<div class="border border-grey-light rounded mb-8 overflow-hidden">
+  <div class="bg-grey-lightest p-4 font-mono text-xs">
+    <div class="whitespace-pre text-grey-dark">{</div>
+    <div class="whitespace-pre text-grey-light">  // ...</div>
+    <div class="whitespace-pre text-grey-dark"><span class="text-purple-dark">  modules</span>: {</div>
+    <div><div class="text-grey-light">&#xA0;&#xA0;&#xA0;&#xA0;// ...</div>
+<div class="text-grey"><span class="text-grey">-</span>&#xA0;&#xA0;&#xA0;textStyle: [&apos;responsive&apos;, &apos;hover&apos;, &apos;focus&apos;],</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;textStyle: [&apos;responsive&apos;, &apos;hover&apos;, &apos;focus&apos;, &apos;active&apos;, &apos;group-hover&apos;],</div></div>
+    <div class="whitespace-pre text-grey-dark">  }</div>
+    <div class="whitespace-pre text-grey-dark">}</div>
+  </div>
+</div>
+<h3>Disabling</h3>
+<p>If you don&apos;t plan to use the text style utilities in your project, you can disable them entirely by setting the <code>textStyle</code> property to <code>false</code> in the <code>modules</code> section of your config file:</p>
+<div class="border border-grey-light rounded mb-8 overflow-hidden">
+  <div class="bg-grey-lightest p-4 font-mono text-xs">
+    <div class="whitespace-pre text-grey-dark">{</div>
+    <div class="whitespace-pre text-grey-light">  // ...</div>
+    <div class="whitespace-pre text-grey-dark"><span class="text-purple-dark">  modules</span>: {</div>
+    <div><div class="text-grey-light">&#xA0;&#xA0;&#xA0;&#xA0;// ...</div>
+<div class="text-grey"><span class="text-grey">-</span>&#xA0;&#xA0;&#xA0;textStyle: [&apos;responsive&apos;, &apos;hover&apos;, &apos;focus&apos;],</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;textStyle: false,</div></div>
+    <div class="whitespace-pre text-grey-dark">  }</div>
+    <div class="whitespace-pre text-grey-dark">}</div>
+  </div>
+</div>              </div>
+
+              
+              
+              
+
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+
+        
+      </div>
+      
+
+
+    </div>
+    
+
+  </div>
+</div>
+
+
+<svg style="height: 0; width: 0; position: absolute; visibility: hidden;">
+  <defs>
+    <linearGradient x1="0%" y1="0%" y2="100%" id="logoGradient">
+      <stop stop-color="#2383AE" offset="0%"/>
+      <stop stop-color="#6DD7B9" offset="100%"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+  <!-- Google Analytics  -->
+  
+  
+
+
+  <!-- Algolia DocSearch  -->
+  
+  
+
+
+
+
+
+      <script src="/assets/anchor.min.js"></script>
+      <script>
+        anchors.options.class = 'text-grey-dark';
+        anchors.add();
+      </script>
+    </body></html>

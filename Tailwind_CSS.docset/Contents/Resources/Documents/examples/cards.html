@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="en" class="bg-white antialiased"><head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Cards</title>
+      <link rel="stylesheet" href="/assets/styles-tailwind.css">
+      <link rel="stylesheet" href="/assets/styles-dash.css">
+    </head>
+<body data-sidebar-visible="true" class="font-source-sans font-normal text-black leading-normal">
+
+
+
+
+
+
+
+
+<div class="w-full max-w-screen-xl mx-auto px-6">
+  <div class="lg:flex -mx-6">
+
+    
+    
+    
+
+    
+    <div id="content-wrapper" class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 ">
+
+      
+      <div id="content">
+
+        
+        <div id="app" class="flex" v-cloak>
+
+          
+          <div class="pt-24 pb-8 lg:pt-28 w-full">
+            <div class="markdown mb-6 px-6 max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+                              <h1>Cards</h1>
+              
+                              <div class="text-xl text-grey-dark mb-4">
+                  Examples of building card components with Tailwind CSS.
+                </div>
+                          </div>
+            <div class="flex">
+              <div class="markdown px-6 xl:px-12 w-full max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+                <p>Tailwind doesn&apos;t include pre-designed card components out of the box, but they&apos;re easy to build using existing utilities.</p>
+<h2>Stacked</h2>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 p-10 flex justify-center">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+  <img class="w-full" src="../../img/card-top.jpg" alt="Sunset in the mountains">
+  <div class="px-6 py-4">
+    <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+    <p class="text-grey-darker text-base">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+    </p>
+  </div>
+  <div class="px-6 py-4">
+    <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
+    <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
+    <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">#winter</span>
+  </div>
+</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;div class=&quot;max-w-sm rounded overflow-hidden shadow-lg&quot;&gt;
+  &lt;img class=&quot;w-full&quot; src=&quot;https://tailwindcss.com/img/card-top.jpg&quot; alt=&quot;Sunset in the mountains&quot;&gt;
+  &lt;div class=&quot;px-6 py-4&quot;&gt;
+    &lt;div class=&quot;font-bold text-xl mb-2&quot;&gt;The Coldest Sunset&lt;/div&gt;
+    &lt;p class=&quot;text-grey-darker text-base&quot;&gt;
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;px-6 py-4&quot;&gt;
+    &lt;span class=&quot;inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2&quot;&gt;#photography&lt;/span&gt;
+    &lt;span class=&quot;inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2&quot;&gt;#travel&lt;/span&gt;
+    &lt;span class=&quot;inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker&quot;&gt;#winter&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<h2>Horizontal</h2>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 p-10 flex justify-center">
+    <div class="max-w-md w-full lg:flex">
+  <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url(&apos;../../img/card-left.jpg&apos;)" title="Woman holding a mug">
+  </div>
+  <div class="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+    <div class="mb-8">
+      <p class="text-sm text-grey-dark flex items-center">
+        <svg class="fill-current text-grey w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z"/>
+        </svg>
+        Members only
+      </p>
+      <div class="text-black font-bold text-xl mb-2">Can coffee make you a better developer?</div>
+      <p class="text-grey-darker text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+    </div>
+    <div class="flex items-center">
+      <img class="w-10 h-10 rounded-full mr-4" src="https://pbs.twimg.com/profile_images/885868801232961537/b1F6H4KC_400x400.jpg" alt="Avatar of Jonathan Reinink">
+      <div class="text-sm">
+        <p class="text-black leading-none">Jonathan Reinink</p>
+        <p class="text-grey-dark">Aug 18</p>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;div class=&quot;max-w-md w-full lg:flex&quot;&gt;
+  &lt;div class=&quot;h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden&quot; style=&quot;background-image: url(&apos;https://tailwindcss.com/img/card-left.jpg&apos;)&quot; title=&quot;Woman holding a mug&quot;&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal&quot;&gt;
+    &lt;div class=&quot;mb-8&quot;&gt;
+      &lt;p class=&quot;text-sm text-grey-dark flex items-center&quot;&gt;
+        &lt;svg class=&quot;fill-current text-grey w-3 h-3 mr-2&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 20 20&quot;&gt;
+          &lt;path d=&quot;M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z&quot; /&gt;
+        &lt;/svg&gt;
+        Members only
+      &lt;/p&gt;
+      &lt;div class=&quot;text-black font-bold text-xl mb-2&quot;&gt;Can coffee make you a better developer?&lt;/div&gt;
+      &lt;p class=&quot;text-grey-darker text-base&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;flex items-center&quot;&gt;
+      &lt;img class=&quot;w-10 h-10 rounded-full mr-4&quot; src=&quot;https://pbs.twimg.com/profile_images/885868801232961537/b1F6H4KC_400x400.jpg&quot; alt=&quot;Avatar of Jonathan Reinink&quot;&gt;
+      &lt;div class=&quot;text-sm&quot;&gt;
+        &lt;p class=&quot;text-black leading-none&quot;&gt;Jonathan Reinink&lt;/p&gt;
+        &lt;p class=&quot;text-grey-dark&quot;&gt;Aug 18&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>              </div>
+
+              
+              
+              
+
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+
+        
+      </div>
+      
+
+
+    </div>
+    
+
+  </div>
+</div>
+
+
+<svg style="height: 0; width: 0; position: absolute; visibility: hidden;">
+  <defs>
+    <linearGradient x1="0%" y1="0%" y2="100%" id="logoGradient">
+      <stop stop-color="#2383AE" offset="0%"/>
+      <stop stop-color="#6DD7B9" offset="100%"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+  <!-- Google Analytics  -->
+  
+  
+
+
+  <!-- Algolia DocSearch  -->
+  
+  
+
+
+
+
+
+      <script src="/assets/anchor.min.js"></script>
+      <script>
+        anchors.options.class = 'text-grey-dark';
+        anchors.add();
+      </script>
+    </body></html>

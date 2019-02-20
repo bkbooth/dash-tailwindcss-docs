@@ -1,0 +1,563 @@
+<!DOCTYPE html><html lang="en" class="bg-white antialiased"><head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Plugins</title>
+      <link rel="stylesheet" href="/assets/styles-tailwind.css">
+      <link rel="stylesheet" href="/assets/styles-dash.css">
+    </head>
+<body data-sidebar-visible="true" class="font-source-sans font-normal text-black leading-normal">
+
+
+
+
+
+
+
+
+<div class="w-full max-w-screen-xl mx-auto px-6">
+  <div class="lg:flex -mx-6">
+
+    
+    
+    
+
+    
+    <div id="content-wrapper" class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 ">
+
+      
+      <div id="content">
+
+        
+        <div id="app" class="flex" v-cloak>
+
+          
+          <div class="pt-24 pb-8 lg:pt-28 w-full">
+            <div class="markdown mb-6 px-6 max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+                              <h1>Plugins</h1>
+              
+                              <div class="text-xl text-grey-dark mb-4">
+                  Extending Tailwind with reusable third-party plugins.
+                </div>
+                          </div>
+            <div class="flex">
+              <div class="markdown px-6 xl:px-12 w-full max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+                <h2 style="visibility: hidden; font-size: 0; margin: 0 0 -1rem 0;">Overview</h2>
+<p>At their simplest, plugins are just functions that register new styles for Tailwind to inject into the user&apos;s stylesheet. That means that to get started authoring your own plugin, all you need to do is add an anonymous function to the <code>plugins</code> list in your config file:</p>
+<pre><code class="language-js">// ...
+
+module.exports = {
+  // ...
+  plugins: [
+
+    function({ addUtilities, addComponents, e, prefix, config }) {
+      // This function is your plugin
+    },
+
+  ],
+  // ...
+}</code></pre>
+<p>Plugin functions receive a single object argument that can be <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">destructured</a> into several helper functions:</p>
+<ul>
+<li><code>addUtilities()</code>, for registering new utility styles</li>
+<li><code>addComponents()</code>, for registering new component styles</li>
+<li><code>addVariant()</code>, for registering custom variants</li>
+<li><code>e()</code>, for escaping strings meant to be used in class names</li>
+<li><code>prefix()</code>, for manually applying the user&apos;s configured prefix to parts of a selector</li>
+<li><code>config()</code>, for looking up values in the user&apos;s Tailwind configuration</li>
+</ul>
+<h2>Adding utilities</h2>
+<p>The <code>addUtilities</code> function allows you to register new styles to be output (along with the built-in utilities) at the <code>@tailwind utilities</code> directive.</p>
+<p>Plugin utilities are output in the order they are registered, <em>after</em> built-in utilities, so if a plugin targets any of the same properties as a built-in utility, the plugin utility will take precedence.</p>
+<p>To add new utilities from a plugin, call <code>addUtilities</code>, passing in your styles using <a href="plugins.html#css-in-js-syntax">CSS-in-JS syntax</a>:</p>
+<pre><code class="language-js">function({ addUtilities }) {
+  const newUtilities = {
+    &apos;.skew-10deg&apos;: {
+      transform: &apos;skewY(-10deg)&apos;,
+    },
+    &apos;.skew-15deg&apos;: {
+      transform: &apos;skewY(-15deg)&apos;,
+    },
+  }
+
+  addUtilities(newUtilities)
+}</code></pre>
+<h3>Prefix and important preferences</h3>
+<p>By default, plugin utilities automatically respect the user&apos;s <a href="configuration.html#prefix"><code>prefix</code></a> and <a href="configuration.html#important"><code>important</code></a> preferences.</p>
+<p>That means that given this Tailwind configuration:</p>
+<pre><code class="language-js">// ...
+
+module.exports = {
+  // ...
+
+  options: {
+    prefix: &apos;tw-&apos;,
+    important: true,
+  },
+
+}</code></pre>
+<p>...the example plugin above would generate the following CSS:</p>
+<pre><code class="language-css">.tw-skew-10deg {
+  transform: skewY(-10deg) !important;
+}
+.tw-skew-15deg {
+  transform: skewY(-15deg) !important;
+}</code></pre>
+<p>If necessary, you can opt out of this behavior by passing an options object as a second parameter to <code>addUtilities</code>:</p>
+<pre><code class="language-js">function({ addUtilities }) {
+  // ...
+
+  addUtilities(newUtilities, {
+    respectPrefix: false,
+    respectImportant: false,  
+  })
+}</code></pre>
+<h3>Responsive and state variants</h3>
+<p>To generate responsive, hover, focus, active, or group-hover variants of your styles, specify the variants you&apos;d like to generate using the <code>variants</code> option:</p>
+<pre><code class="language-js">function({ addUtilities }) {
+  // ...
+
+  addUtilities(newUtilities, {
+    variants: [&apos;responsive&apos;, &apos;hover&apos;],
+  })
+}</code></pre>
+<p>If you only need to specify variants and don&apos;t need to opt-out of the default prefix or important options, you can also pass the array of variants as the second parameter directly:</p>
+<pre><code class="language-js">function({ addUtilities }) {
+  // ...
+
+  addUtilities(newUtilities, [&apos;responsive&apos;, &apos;hover&apos;])
+}</code></pre>
+<h2>Adding components</h2>
+<p>The <code>addComponents</code> function allows you to register new styles to be output at the <code>@tailwind components</code> directive.</p>
+<p>Use it to add more opinionated, complex classes like buttons, form controls, alerts, etc; the sort of pre-built components you often see in other frameworks that you might need to override with utility classes.</p>
+<p>To add new component styles from a plugin, call <code>addComponents</code>, passing in your styles using <a href="plugins.html#css-in-js-syntax">CSS-in-JS syntax</a>:</p>
+<pre><code class="language-js">function({ addComponents }) {
+  const buttons = {
+    &apos;.btn&apos;: {
+      padding: &apos;.5rem 1rem&apos;,
+      borderRadius: &apos;.25rem&apos;,
+      fontWeight: &apos;600&apos;,
+    },
+    &apos;.btn-blue&apos;: {
+      backgroundColor: &apos;#3490dc&apos;,
+      color: &apos;#fff&apos;,
+      &apos;&amp;:hover&apos;: {
+        backgroundColor: &apos;#2779bd&apos;
+      },
+    },
+    &apos;.btn-red&apos;: {
+      backgroundColor: &apos;#e3342f&apos;,
+      color: &apos;#fff&apos;,
+      &apos;&amp;:hover&apos;: {
+        backgroundColor: &apos;#cc1f1a&apos;
+      },
+    },
+  }
+
+  addComponents(buttons)
+}</code></pre>
+<h3>Prefix and important preferences</h3>
+<p>By default, component classes automatically respect the user&apos;s <code>prefix</code> preference, but <strong>they are not affected</strong> by the user&apos;s <code>important</code> preference.</p>
+<p>That means that given this Tailwind configuration:</p>
+<pre><code class="language-js">// ...
+
+module.exports = {
+  // ...
+
+  options: {
+    prefix: &apos;tw-&apos;,
+    important: true,
+  },
+
+}</code></pre>
+<p>...the example plugin above would generate the following CSS:</p>
+<pre><code class="language-css">.tw-btn {
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+  font-weight: 600;
+}
+.tw-btn-blue {
+  background-color: #3490dc;
+  color: #fff;
+}
+.tw-btn-blue:hover {
+  background-color: #2779bd;
+}
+.tw-btn-blue {
+  background-color: #e3342f;
+  color: #fff;
+}
+.tw-btn-blue:hover {
+  background-color: #cc1f1a;
+}</code></pre>
+<p>Although there&apos;s rarely a good reason to make component declarations important, if you really need to do it you can always add <code>!important</code> manually:</p>
+<pre><code class="language-js">function({ addComponents }) {
+  addComponents({
+    &apos;.btn&apos;: {
+      padding: &apos;.5rem 1rem !important&apos;,
+      borderRadius: &apos;.25rem !important&apos;,
+      fontWeight: &apos;600 !important&apos;,
+    },
+    // ...
+  })
+}</code></pre>
+<p>All classes in a selector will be prefixed, so if you add a more complex style like:</p>
+<pre><code class="language-js">function({ addComponents }) {
+  addComponents({
+    // ...
+    &apos;.navbar-inverse a.nav-link&apos;: {
+        color: &apos;#fff&apos;,
+    }
+  })
+}</code></pre>
+<p>...the following CSS would be generated:</p>
+<pre><code class="language-css">.tw-navbar-inverse a.tw-nav-link {
+    color: #fff;
+}</code></pre>
+<p>To opt out of prefixing, pass an options object as a second parameter to <code>addComponents</code>:</p>
+<pre><code class="language-js">function({ addComponents }) {
+  // ...
+
+  addComponents(buttons, {
+    respectPrefix: false,
+  })
+}</code></pre>
+<h3>Responsive and state variants</h3>
+<p>The <code>addComponents</code> function doesn&apos;t provide the ability to automatically generate variants since it doesn&apos;t typically make sense to do so for component classes.</p>
+<p>You can always do this manually if necessary by wrapping your styles in the <code>@variants</code> at-rule:</p>
+<pre><code class="language-js">function({ addComponents }) {
+  addComponents({
+    &apos;@variants responsive, hover&apos;: {
+      &apos;.btn&apos;: {
+        padding: &apos;.5rem 1rem !important&apos;,
+        borderRadius: &apos;.25rem !important&apos;,
+        fontWeight: &apos;600 !important&apos;,
+      },
+      // ...
+    }
+  })
+}</code></pre>
+<h2>Escaping class names</h2>
+<p>If your plugin generates classes that contain user-provided strings, you can use the <code>e</code> function to escape those class names to make sure non-standard characters are handled properly automatically.</p>
+<p>For example, this plugin generates a set of <code>.rotate-{angle}</code> utilities where <code>{angle}</code> is a user provided string. The <code>e</code> function is used to escape the concatenated class name to make sure classes like <code>.rotate-1/4</code> work as expected:</p>
+<pre><code class="language-js">
+function({ e, addUtilities }) {
+  const angles = {
+    &apos;1/4&apos;: &apos;90deg&apos;,
+    &apos;1/2&apos;: &apos;180deg&apos;,
+    &apos;3/4&apos;: &apos;270deg&apos;,
+  }
+
+  const rotateUtilities = _.map(angles, (value, key) =&gt; {
+    return {
+      [`.${e(`rotate-${key}`)}`]: {
+        transform: `rotate(${value})`
+      }
+    }
+  })
+
+  addUtilities(rotateUtilities)
+}</code></pre>
+<p>This plugin would generate the following CSS:</p>
+<pre><code class="language-css">.rotate-1\/4 {
+  transform: rotate(90deg);
+}
+.rotate-1\/2 {
+  transform: rotate(180deg);
+}
+.rotate-3\/4 {
+  transform: rotate(270deg);
+}</code></pre>
+<p>Be careful to only escape content you actually want to escape; don&apos;t pass the leading <code>.</code> in a class name or the <code>:</code> at the beginning pseudo-classes like <code>:hover</code> or <code>:focus</code> or those characters will be escaped.</p>
+<p>Additionally, because CSS has rules about the characters a class name can <em>start</em> with (a class can&apos;t start with a number, but it can contain one), it&apos;s a good idea to escape your complete class name (not just the user-provided portion) or you may end up with unnecessary escape sequences:</p>
+<pre><code class="language-js">// Will unnecessarily escape `1`
+`.rotate-${e(&apos;1/4&apos;)}`
+// =&gt; &apos;.rotate-\31 \/4&apos;
+
+// Won&apos;t escape `1` because it&apos;s not the first character
+`.${e(&apos;rotate-1/4&apos;)}`
+// =&gt; &apos;.rotate-1\/4&apos;</code></pre>
+<h2>Manually prefixing selectors</h2>
+<p>If you&apos;re writing something complex where you only want to prefix certain classes, you can use the <code>prefix</code> function to have fine-grained control of when the user&apos;s configured prefix is applied.</p>
+<p>For example, if you&apos;re creating a plugin to be reused across a set of internal projects that includes existing classes in its selectors, you might only want to prefix the new classes:</p>
+<pre><code class="language-js">function({ prefix, addComponents }) {
+  addComponents({
+    [`.existing-class &gt; ${prefix(&apos;.new-class&apos;)}`]: {
+      backgroundColor: &apos;#fff&apos;,         
+    },
+  })
+}</code></pre>
+<p>Assuming a configured prefix of <code>tw-</code>, this would generate the following CSS:</p>
+<pre><code class="language-css">.existing-class &gt; .tw-new-class {
+  background-color: #fff;
+}</code></pre>
+<p>The <code>prefix</code> function will prefix all classes in a selector and ignore non-classes, so it&apos;s totally safe to pass complex selectors like this one:</p>
+<pre><code class="language-js">prefix(&apos;.btn-blue .w-1\/4 &gt; h1.text-xl + a .bar&apos;)
+// =&gt; &apos;.tw-btn-blue .tw-w-1\/4 &gt; h1.tw-text-xl + a .tw-bar&apos;</code></pre>
+<h2>Referencing the user&apos;s config</h2>
+<p>The <code>config</code> function allows you to ask for a value from the user&apos;s Tailwind configuration using dot notation, providing a default value if that path doesn&apos;t exist.</p>
+<p>For example, this simplified version of the built-in <a href="container.html">container</a> plugin uses the config function to get the user&apos;s configured breakpoints:</p>
+<pre><code class="language-js">function({ addComponents, config }) {
+  const screens = config(&apos;screens&apos;, [])
+
+  const mediaQueries = _.map(screens, width =&gt; {
+    return {
+      [`@media (min-width: ${width})`]: {
+        &apos;.container&apos;: {
+          &apos;max-width&apos;: width,
+        },
+      },
+    }
+  })
+
+  addComponents([
+    { &apos;.container&apos;: { width: &apos;100%&apos; } },
+    ...mediaQueries,
+  ])
+}</code></pre>
+<p>Avoid relying too heavily on using the config function as a way to make your plugin customizable; it&apos;s much better to <a href="plugins.html#exposing-options">accept configuration options explicitly</a>.</p>
+<p>Use the config function as a convenience to the end-user when it makes sense to use their existing configuration values by default, but always provide explicit options that allow the user to configure your plugin directly as well.</p>
+<h2>Exposing options</h2>
+<p>It often makes sense for a plugin to expose its own options that the user can configure to customize the plugin&apos;s behavior.</p>
+<p>The best way to accomplish this is to design your plugins as functions that accept configuration and return another function that has access to that configuration from the parent scope.</p>
+<p>For example, here&apos;s a plugin <em>(extracted to its own module)</em> for creating simple gradient utilities that accepts the gradients and variants to generate as options:</p>
+<pre><code class="language-js">const _ = require(&apos;lodash&apos;)
+
+module.exports = function({ gradients, variants }) {
+  return function({ addUtilities, e }) {
+    const utilities = _.map(gradients, ([start, end], name) =&gt; ({
+      [`.bg-gradient-${e(name)}`]: {
+        backgroundImage: `linear-gradient(to right, ${start}, ${end})`
+      }
+    }))
+
+    addUtilities(utilities, variants)
+  }
+}</code></pre>
+<p>To use it, you&apos;d <code>require</code> it in your plugins list, passing through your gradients and variants:</p>
+<pre><code class="language-js">// ...
+
+module.exports = {
+  // ...
+  plugins: [
+    require(&apos;./path/to/plugin&apos;)({
+      gradients: {
+        &apos;blue-green&apos;: [colors[&apos;blue&apos;], colors[&apos;green&apos;]],
+        &apos;purple-blue&apos;: [colors[&apos;purple&apos;], colors[&apos;blue&apos;]],
+        // ...
+      },
+      variants: [&apos;responsive&apos;, &apos;hover&apos;],
+    })
+  ],
+  // ...
+}</code></pre>
+<p>There&apos;s no rules about how your plugin needs to be configured; you are in total control of the options you expose and how they work. Tailwind only cares about the actual plugin function you return when it&apos;s all said and done.</p>
+<h2>CSS-in-JS syntax</h2>
+<p>Both <code>addUtilities</code> and <code>addComponents</code> expect CSS rules written as JavaScript objects. Tailwind uses the same sort of syntax you might recognize from CSS-in-JS libraries like <a href="https://emotion.sh/docs/object-styles">Emotion</a>, and is powered by <a href="https://github.com/postcss/postcss-js">postcss-js</a> under the hood.</p>
+<p>Consider this simple CSS rule:</p>
+<pre><code class="language-css">.card {
+  background-color: #fff;
+  border-radius: .25rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}</code></pre>
+<p>Translating this to a CSS-in-JS object would look like this:</p>
+<pre><code class="language-js">addComponents({
+  &apos;.card&apos;: {
+    &apos;background-color&apos;: &apos;#fff&apos;,
+    &apos;border-radius&apos;: &apos;.25rem&apos;,
+    &apos;box-shadow&apos;: &apos;0 2px 4px rgba(0,0,0,0.2)&apos;,
+  }
+})</code></pre>
+<p>For convenience, property names can also be written in camelCase and will be automatically translated to dash-case:</p>
+<pre><code class="language-js">addComponents({
+  &apos;.card&apos;: {
+    backgroundColor: &apos;#fff&apos;,
+    borderRadius: &apos;.25rem&apos;,
+    boxShadow: &apos;0 2px 4px rgba(0,0,0,0.2)&apos;,
+  }
+})</code></pre>
+<p>Nesting is also supported, using the same syntax you might be familiar with from Sass or Less:</p>
+<pre><code class="language-js">addComponents({
+  &apos;.card&apos;: {
+    backgroundColor: &apos;#fff&apos;,
+    borderRadius: &apos;.25rem&apos;,
+    boxShadow: &apos;0 2px 4px rgba(0,0,0,0.2)&apos;,
+    &apos;&amp;:hover&apos;: {
+      boxShadow: &apos;0 10px 15px rgba(0,0,0,0.2)&apos;,
+    }
+    &apos;@media (min-width: 500px)&apos;: {
+      borderRadius: &apos;.5rem&apos;,
+    }
+  }
+})</code></pre>
+<p>Multiple rules can be defined in the same object:</p>
+<pre><code class="language-js">addComponents({
+  &apos;.btn&apos;: {
+    padding: &apos;.5rem 1rem&apos;,
+    borderRadius: &apos;.25rem&apos;,
+    fontWeight: &apos;600&apos;,
+  },
+  &apos;.btn-blue&apos;: {
+    backgroundColor: &apos;#3490dc&apos;,
+    color: &apos;#fff&apos;,
+    &apos;&amp;:hover&apos;: {
+      backgroundColor: &apos;#2779bd&apos;
+    },
+  },
+  &apos;.btn-red&apos;: {
+    backgroundColor: &apos;#e3342f&apos;,
+    color: &apos;#fff&apos;,
+    &apos;&amp;:hover&apos;: {
+      backgroundColor: &apos;#cc1f1a&apos;
+    },
+  },
+})</code></pre>
+<p>...or as an array of objects in case you need to repeat the same key:</p>
+<pre><code class="language-js">addComponents([
+  {
+    &apos;@media (min-width: 500px)&apos;: {
+      // ...
+    }
+  },
+  {
+    &apos;@media (min-width: 500px)&apos;: {
+      // ...
+    }
+  },
+  {
+    &apos;@media (min-width: 500px)&apos;: {
+      // ...
+    }
+  },
+])</code></pre>
+<h2>Adding variants</h2>
+<p>The <code>addVariant</code> function allows you to register your own custom <a href="state-variants.html">variants</a> that can be used just like the built-in hover, focus, active, etc. variants.</p>
+<p>To add a new variant, call the <code>addVariant</code> function, passing in the name of your custom variant, and a callback that modifies the affected CSS rules as needed.</p>
+<pre><code class="language-js">function({ addVariant }) {
+  addVariant(&apos;disabled&apos;, ({ modifySelectors, separator }) =&gt; {
+    modifySelectors(({ className }) =&gt; {
+      return `.disabled${separator}${className}:disabled`
+    })
+  })
+}</code></pre>
+<p>The callback receives an object that can be destructured into the following parts:</p>
+<ul>
+<li><code>modifySelectors</code>, a helper function to simplify adding basic variants</li>
+<li><code>separator</code>, the user&apos;s configured <a href="configuration.html#separator">separator string</a></li>
+<li><code>container</code>, a <a href="http://api.postcss.org/Container.html">PostCSS Container</a> containing all of the rules the variant is being applied to, for creating complex variants</li>
+</ul>
+<h3>Basic variants</h3>
+<p>If you want to add a simple variant that only needs to change the selector, use the <code>modifySelectors</code> helper.</p>
+<p>The <code>modifySelectors</code> helper accepts a function that receives an object that can be destructured into the following parts:</p>
+<ul>
+<li><code>selector</code>, the complete unmodified selector for the current rule</li>
+<li><code>className</code>, the class name of the current rule <em>with the leading dot removed</em></li>
+</ul>
+<p>The function you pass to <code>modifySelectors</code> should simply return the modified selector.</p>
+<p>For example, a <code>first-child</code> variant plugin could be written like this:</p>
+<pre><code class="language-js">function({ addVariant }) {
+  addVariant(&apos;first-child&apos;, ({ modifySelectors, separator }) =&gt; {
+    modifySelectors(({ className }) =&gt; {
+      return `.first-child${separator}${className}:first-child`
+    })
+  })
+}</code></pre>
+<h3>Complex variants</h3>
+<p>If you need to do anything beyond simply modifying selectors (like changing the actual rule declarations, or wrapping the rules in another at-rule), you&apos;ll need to use the <code>container</code> instance.</p>
+<p>Using the <code>container</code> instance, you can traverse all of the rules within a given module or <code>@variants</code> block and manipulate them however you like using the standard PostCSS API.</p>
+<p>For example, this plugin creates an <code>important</code> version of each affected utility by prepending the class with an exclamation mark and modifying each declaration to be <code>important</code>:</p>
+<pre><code class="language-js">function({ addVariant }) {
+  addVariant(&apos;important&apos;, ({ container }) =&gt; {
+    container.walkRules(rule =&gt; {
+      rule.selector = `.\\!${rule.selector.slice(1)}`
+      rule.walkDecls(decl =&gt; {
+        decl.important = true
+      })
+    })
+  })
+}</code></pre>
+<p>This plugin takes all of the rules inside the container, wraps them in a <code>@supports (display: grid)</code> at-rule, and prefixes each rule with <code>supports-grid</code>:</p>
+<pre><code class="language-js">const postcss = require(&apos;postcss&apos;)
+
+function({ addVariant }) {
+  addVariant(&apos;supports-grid&apos;, ({ container, separator }) =&gt; {
+    const supportsRule = postcss.atRule({ name: &apos;supports&apos;, params: &apos;(display: grid)&apos; })
+    supportsRule.nodes = container.nodes
+    container.nodes = [supportsRule]
+    supportsRule.walkRules(rule =&gt; {
+      rule.selector = `.supports-grid${separator}${rule.selector.slice(1)}`
+    })
+  })
+}</code></pre>
+<p>To learn more about working with PostCSS directly, check out the <a href="http://api.postcss.org/Container.html">PostCSS API documentation</a>.</p>
+<h3>Using custom variants</h3>
+<p>Using custom variants is no different than using Tailwind&apos;s built-in variants.</p>
+<p>To use custom variants with Tailwind&apos;s modules, add them to the <code>modules</code> section of your config file:</p>
+<pre><code class="language-js">modules.exports = {
+  // ...
+  modules: {
+    // ...
+    borderWidths: [&apos;responsive&apos;, &apos;hover&apos;, &apos;focus&apos;, &apos;first-child&apos;, &apos;disabled&apos;],
+    // ...
+  }
+}</code></pre>
+<p>To use custom variants with custom utilities in your own CSS, use the <a href="functions-and-directives.html#variants">variants at-rule</a>:</p>
+<pre><code class="language-less">@variants  hover, first-child {
+  .bg-cover-image {
+    background-image: url(&apos;/path/to/image.jpg&apos;);
+  }
+}</code></pre>
+<h2>Example plugins</h2>
+<p>To check out a few example plugins, <a href="https://github.com/tailwindcss/plugin-examples">visit the plugin examples repository on GitHub</a>.</p>              </div>
+
+              
+              
+              
+
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+
+        
+      </div>
+      
+
+
+    </div>
+    
+
+  </div>
+</div>
+
+
+<svg style="height: 0; width: 0; position: absolute; visibility: hidden;">
+  <defs>
+    <linearGradient x1="0%" y1="0%" y2="100%" id="logoGradient">
+      <stop stop-color="#2383AE" offset="0%"/>
+      <stop stop-color="#6DD7B9" offset="100%"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+  <!-- Google Analytics  -->
+  
+  
+
+
+  <!-- Algolia DocSearch  -->
+  
+  
+
+
+
+
+
+      <script src="/assets/anchor.min.js"></script>
+      <script>
+        anchors.options.class = 'text-grey-dark';
+        anchors.add();
+      </script>
+    </body></html>

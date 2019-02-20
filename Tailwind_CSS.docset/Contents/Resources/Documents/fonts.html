@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="en" class="bg-white antialiased"><head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Font Family</title>
+      <link rel="stylesheet" href="/assets/styles-tailwind.css">
+      <link rel="stylesheet" href="/assets/styles-dash.css">
+    </head>
+<body data-sidebar-visible="true" class="font-source-sans font-normal text-black leading-normal">
+
+
+
+
+
+
+
+
+<div class="w-full max-w-screen-xl mx-auto px-6">
+  <div class="lg:flex -mx-6">
+
+    
+    
+    
+
+    
+    <div id="content-wrapper" class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 ">
+
+      
+      <div id="content">
+
+        
+        <div id="app" class="flex" v-cloak>
+
+          
+          <div class="pt-24 pb-8 lg:pt-28 w-full">
+            <div class="markdown mb-6 px-6 max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+                              <h1>Font Families</h1>
+              
+                              <div class="text-xl text-grey-dark mb-4">
+                  Utilities for controlling the font family of an element.
+                </div>
+                          </div>
+            <div class="flex">
+              <div class="markdown px-6 xl:px-12 w-full max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+                <h2 style="visibility: hidden; font-size: 0; margin: 0;">Class reference</h2>
+<div class="border-t border-b border-grey-light overflow-hidden relative">
+  <div class=" overflow-y-auto scrollbar-w-2 scrollbar-track-grey-lighter scrollbar-thumb-rounded scrollbar-thumb-grey scrolling-touch">
+    <table class="w-full text-left table-collapse">
+      <thead>
+        <tr>
+          <th class="text-sm font-semibold text-grey-darker p-2 bg-grey-lightest">Class</th>
+          <th class="text-sm font-semibold text-grey-darker p-2 bg-grey-lightest">Properties</th>
+        </tr>
+      </thead>
+      <tbody class="align-baseline">
+                <tr>
+          <td class="p-2 border-t border-grey-light font-mono text-xs text-purple-dark whitespace-no-wrap">.font-sans</td>
+          <td class="p-2 border-t border-grey-light font-mono text-xs text-blue-dark whitespace-pre">font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.font-serif</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">font-family: Constantia, Lucida Bright, Lucidabright, Lucida Serif, Lucida, DejaVu Serif, Bitstream Vera Serif, Liberation Serif, Georgia, serif;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.font-mono</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;</td>
+        </tr>
+              </tbody>
+    </table>
+  </div>
+</div>
+<h3>Sans-serif</h3>
+<p>Use <code>.font-sans</code> to apply a web safe sans-serif font family:</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <p class="font-sans text-lg text-grey-darkest text-center">
+  I&apos;m a sans-serif paragraph.
+</p>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;p class=&quot;font-sans text-lg text-grey-darkest text-center&quot;&gt;
+  I&apos;m a sans-serif paragraph.
+&lt;/p&gt;</code></pre>
+  </div>
+</div>
+<h3>Serif</h3>
+<p>Use <code>.font-serif</code> to apply a web safe serif font family:</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <p class="font-serif text-lg text-grey-darkest text-center">
+  I&apos;m a serif paragraph.
+</p>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;p class=&quot;font-serif text-lg text-grey-darkest text-center&quot;&gt;
+  I&apos;m a serif paragraph.
+&lt;/p&gt;</code></pre>
+  </div>
+</div>
+<h3>Monospaced</h3>
+<p>Use <code>.font-mono</code> to apply a web safe monospaced font family:</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 ">
+    <p class="font-mono text-lg text-grey-darkest text-center">
+  I&apos;m a monospaced paragraph.
+</p>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;p class=&quot;font-mono text-lg text-grey-darkest text-center&quot;&gt;
+  I&apos;m a monospaced paragraph.
+&lt;/p&gt;</code></pre>
+  </div>
+</div>
+<h2>Customizing</h2>
+<h3>Font Families</h3>
+<p>By default Tailwind provides three font family utilities: a cross-browser sans-serif stack, a cross-browser serif stack, and a cross-browser monospaced stack. You can change, add, or remove these by editing the <code>fonts</code> section of your Tailwind config.</p>
+<div class="border border-grey-light rounded mb-8 overflow-hidden">
+  <div class="bg-grey-lightest p-4 font-mono text-xs">
+    <div class="whitespace-pre text-grey-dark">{</div>
+    <div class="whitespace-pre text-grey-light">  // ...</div>
+    <div class="whitespace-pre text-grey-dark"><span class="text-purple-dark">  fonts</span>: {</div>
+    <div><div class="text-grey"><span class="text-grey">-</span>&#xA0;&#xA0;&#xA0;&apos;sans&apos;: [&apos;system-ui&apos;, &apos;BlinkMacSystemFont&apos;, ...],</div>
+<div class="text-grey"><span class="text-grey">-</span>&#xA0;&#xA0;&#xA0;&apos;serif&apos;: [&apos;Constantia&apos;, &apos;Lucida Bright&apos;, ...],</div>
+<div class="text-grey"><span class="text-grey">-</span>&#xA0;&#xA0;&#xA0;&apos;mono&apos;: [&apos;Menlo&apos;, &apos;Monaco&apos;, ...],</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;&apos;display&apos;: [&apos;Oswald&apos;, ...],</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;&apos;body&apos;: [&apos;Open Sans&apos;, ...],</div></div>
+    <div class="whitespace-pre text-grey-dark">  }</div>
+    <div class="whitespace-pre text-grey-dark">}</div>
+  </div>
+</div>
+<p>Font families can be specified as an array or as a simple comma-delimited string:</p>
+<pre><code class="language-js">{
+  // Array format:
+  &apos;sans&apos;: [&apos;Helvetica&apos;, &apos;Arial&apos;, &apos;sans-serif&apos;],
+
+  // Comma-delimited format:
+  &apos;sans&apos;: &apos;Helvetica, Arial, sans-serif&apos;,
+}</code></pre>
+<p>Note that <strong>Tailwind does not automatically escape font names</strong> for you. If you&apos;re using a font that contains an invalid identifier, wrap it in quotes or escape the invalid characters.</p>
+<pre><code class="language-js">{
+  // Won&apos;t work:
+  &apos;sans&apos;: [&apos;Exo 2&apos;, ...],
+
+  // Add quotes:
+  &apos;sans&apos;: [&apos;&quot;Exo 2&quot;&apos;, ...],
+
+  // ...or escape the space:
+  &apos;sans&apos;: [&apos;Exo\\ 2&apos;, ...],
+}
+</code></pre>
+<h3>Responsive and State Variants</h3>
+<p>By default, only responsive variants are generated for font utilities.</p>
+<p>You can control which variants are generated for the font utilities by modifying the <code>fonts</code> property in the <code>modules</code> section of your Tailwind config file.</p>
+<p>For example, this config will also generate hover and focus variants:</p>
+<div class="border border-grey-light rounded mb-8 overflow-hidden">
+  <div class="bg-grey-lightest p-4 font-mono text-xs">
+    <div class="whitespace-pre text-grey-dark">{</div>
+    <div class="whitespace-pre text-grey-light">  // ...</div>
+    <div class="whitespace-pre text-grey-dark"><span class="text-purple-dark">  modules</span>: {</div>
+    <div><div class="text-grey-light">&#xA0;&#xA0;&#xA0;&#xA0;// ...</div>
+<div class="text-grey"><span class="text-grey">-</span>&#xA0;&#xA0;&#xA0;fonts: [&apos;responsive&apos;],</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;fonts: [&apos;responsive&apos;, &apos;hover&apos;, &apos;focus&apos;, &apos;active&apos;, &apos;group-hover&apos;],</div></div>
+    <div class="whitespace-pre text-grey-dark">  }</div>
+    <div class="whitespace-pre text-grey-dark">}</div>
+  </div>
+</div>
+<h3>Disabling</h3>
+<p>If you don&apos;t plan to use the font utilities in your project, you can disable them entirely by setting the <code>fonts</code> property to <code>false</code> in the <code>modules</code> section of your config file:</p>
+<div class="border border-grey-light rounded mb-8 overflow-hidden">
+  <div class="bg-grey-lightest p-4 font-mono text-xs">
+    <div class="whitespace-pre text-grey-dark">{</div>
+    <div class="whitespace-pre text-grey-light">  // ...</div>
+    <div class="whitespace-pre text-grey-dark"><span class="text-purple-dark">  modules</span>: {</div>
+    <div><div class="text-grey-light">&#xA0;&#xA0;&#xA0;&#xA0;// ...</div>
+<div class="text-grey"><span class="text-grey">-</span>&#xA0;&#xA0;&#xA0;fonts: [&apos;responsive&apos;],</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;fonts: false,</div></div>
+    <div class="whitespace-pre text-grey-dark">  }</div>
+    <div class="whitespace-pre text-grey-dark">}</div>
+  </div>
+</div>              </div>
+
+              
+              
+              
+
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+
+        
+      </div>
+      
+
+
+    </div>
+    
+
+  </div>
+</div>
+
+
+<svg style="height: 0; width: 0; position: absolute; visibility: hidden;">
+  <defs>
+    <linearGradient x1="0%" y1="0%" y2="100%" id="logoGradient">
+      <stop stop-color="#2383AE" offset="0%"/>
+      <stop stop-color="#6DD7B9" offset="100%"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+  <!-- Google Analytics  -->
+  
+  
+
+
+  <!-- Algolia DocSearch  -->
+  
+  
+
+
+
+
+
+      <script src="/assets/anchor.min.js"></script>
+      <script>
+        anchors.options.class = 'text-grey-dark';
+        anchors.add();
+      </script>
+    </body></html>

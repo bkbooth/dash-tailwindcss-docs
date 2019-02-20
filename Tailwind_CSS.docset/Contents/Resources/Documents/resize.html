@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="en" class="bg-white antialiased"><head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Resize</title>
+      <link rel="stylesheet" href="/assets/styles-tailwind.css">
+      <link rel="stylesheet" href="/assets/styles-dash.css">
+    </head>
+<body data-sidebar-visible="true" class="font-source-sans font-normal text-black leading-normal">
+
+
+
+
+
+
+
+
+<div class="w-full max-w-screen-xl mx-auto px-6">
+  <div class="lg:flex -mx-6">
+
+    
+    
+    
+
+    
+    <div id="content-wrapper" class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 ">
+
+      
+      <div id="content">
+
+        
+        <div id="app" class="flex" v-cloak>
+
+          
+          <div class="pt-24 pb-8 lg:pt-28 w-full">
+            <div class="markdown mb-6 px-6 max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+                              <h1>Resize</h1>
+              
+                              <div class="text-xl text-grey-dark mb-4">
+                  Utilities for controlling how an element can be resized.
+                </div>
+                          </div>
+            <div class="flex">
+              <div class="markdown px-6 xl:px-12 w-full max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+                <div class="bg-blue-lightest border-l-4 border-blue-light text-blue-darkest px-4 py-3 mb-4">
+  <div class="flex">
+    <div class="py-1">
+      <svg class="fill-current h-6 w-6 text-blue-light mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zm0-2c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm-.5-5h1c.276 0 .5.224.5.5v1c0 .276-.224.5-.5.5h-1c-.276 0-.5-.224-.5-.5v-1c0-.276.224-.5.5-.5zm0-8h1c.276 0 .5.224.5.5V8l-.5 3-1 .5L9 8V5.5c0-.276.224-.5.5-.5z"/></svg>
+    </div>
+    <div>
+      <p class="font-semibold">Work in progress!</p>
+      <p class="text-sm">More detailed documentation is coming soon, but in the meantime here&apos;s a quick class reference.</p>
+    </div>
+  </div>
+</div>
+<h2 style="visibility: hidden; font-size: 0; margin: 0;">Class reference</h2>
+<div class="border-t border-b border-grey-light overflow-hidden relative">
+  <div class=" overflow-y-auto scrollbar-w-2 scrollbar-track-grey-lighter scrollbar-thumb-rounded scrollbar-thumb-grey scrolling-touch">
+    <table class="w-full text-left table-collapse">
+      <thead>
+        <tr>
+          <th class="text-sm font-semibold text-grey-darker p-2 bg-grey-lightest">Class</th>
+          <th class="text-sm font-semibold text-grey-darker p-2 bg-grey-lightest">Properties</th>
+        </tr>
+      </thead>
+      <tbody class="align-baseline">
+                <tr>
+          <td class="p-2 border-t border-grey-light font-mono text-xs text-purple-dark whitespace-no-wrap">.resize-none</td>
+          <td class="p-2 border-t border-grey-light font-mono text-xs text-blue-dark whitespace-pre">resize: none;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.resize</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">resize: both;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.resize-y</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">resize: vertical;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.resize-x</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">resize: horizontal;</td>
+        </tr>
+              </tbody>
+    </table>
+  </div>
+</div>
+<h2>Customizing</h2>
+<h3>Responsive and State Variants</h3>
+<p>By default, only responsive variants are generated for resizing utilities.</p>
+<p>You can control which variants are generated for the resizing utilities by modifying the <code>resize</code> property in the <code>modules</code> section of your Tailwind config file.</p>
+<p>For example, this config will also generate hover and focus variants:</p>
+<div class="border border-grey-light rounded mb-8 overflow-hidden">
+  <div class="bg-grey-lightest p-4 font-mono text-xs">
+    <div class="whitespace-pre text-grey-dark">{</div>
+    <div class="whitespace-pre text-grey-light">  // ...</div>
+    <div class="whitespace-pre text-grey-dark"><span class="text-purple-dark">  modules</span>: {</div>
+    <div><div class="text-grey-light">&#xA0;&#xA0;&#xA0;&#xA0;// ...</div>
+<div class="text-grey"><span class="text-grey">-</span>&#xA0;&#xA0;&#xA0;resize: [&apos;responsive&apos;],</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;resize: [&apos;responsive&apos;, &apos;hover&apos;, &apos;focus&apos;, &apos;active&apos;, &apos;group-hover&apos;],</div></div>
+    <div class="whitespace-pre text-grey-dark">  }</div>
+    <div class="whitespace-pre text-grey-dark">}</div>
+  </div>
+</div>
+<h3>Disabling</h3>
+<p>If you don&apos;t plan to use the resizing utilities in your project, you can disable them entirely by setting the <code>resize</code> property to <code>false</code> in the <code>modules</code> section of your config file:</p>
+<div class="border border-grey-light rounded mb-8 overflow-hidden">
+  <div class="bg-grey-lightest p-4 font-mono text-xs">
+    <div class="whitespace-pre text-grey-dark">{</div>
+    <div class="whitespace-pre text-grey-light">  // ...</div>
+    <div class="whitespace-pre text-grey-dark"><span class="text-purple-dark">  modules</span>: {</div>
+    <div><div class="text-grey-light">&#xA0;&#xA0;&#xA0;&#xA0;// ...</div>
+<div class="text-grey"><span class="text-grey">-</span>&#xA0;&#xA0;&#xA0;resize: [&apos;responsive&apos;],</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;resize: false,</div></div>
+    <div class="whitespace-pre text-grey-dark">  }</div>
+    <div class="whitespace-pre text-grey-dark">}</div>
+  </div>
+</div>              </div>
+
+              
+              
+              
+
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+
+        
+      </div>
+      
+
+
+    </div>
+    
+
+  </div>
+</div>
+
+
+<svg style="height: 0; width: 0; position: absolute; visibility: hidden;">
+  <defs>
+    <linearGradient x1="0%" y1="0%" y2="100%" id="logoGradient">
+      <stop stop-color="#2383AE" offset="0%"/>
+      <stop stop-color="#6DD7B9" offset="100%"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+  <!-- Google Analytics  -->
+  
+  
+
+
+  <!-- Algolia DocSearch  -->
+  
+  
+
+
+
+
+
+      <script src="/assets/anchor.min.js"></script>
+      <script>
+        anchors.options.class = 'text-grey-dark';
+        anchors.add();
+      </script>
+    </body></html>

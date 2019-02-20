@@ -1,0 +1,171 @@
+<!DOCTYPE html><html lang="en" class="bg-white antialiased"><head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Margin &amp; Padding</title>
+      <link rel="stylesheet" href="/assets/styles-tailwind.css">
+      <link rel="stylesheet" href="/assets/styles-dash.css">
+    </head>
+<body data-sidebar-visible="true" class="font-source-sans font-normal text-black leading-normal">
+
+
+
+
+
+
+
+
+<div class="w-full max-w-screen-xl mx-auto px-6">
+  <div class="lg:flex -mx-6">
+
+    
+    
+    
+
+    
+    <div id="content-wrapper" class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 ">
+
+      
+      <div id="content">
+
+        
+        <div id="app" class="flex" v-cloak>
+
+          
+          <div class="pt-24 pb-8 lg:pt-28 w-full">
+            <div class="markdown mb-6 px-6 max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+                              <h1>Spacing</h1>
+              
+                              <div class="text-xl text-grey-dark mb-4">
+                  Utilities for controlling an element&apos;s padding and margin.
+                </div>
+                          </div>
+            <div class="flex">
+              <div class="markdown px-6 xl:px-12 w-full max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+                <div class="bg-blue-lightest border-l-4 border-blue-light text-blue-darkest px-4 py-3 mb-4">
+  <div class="flex">
+    <div class="py-1">
+      <svg class="fill-current h-6 w-6 text-blue-light mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zm0-2c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm-.5-5h1c.276 0 .5.224.5.5v1c0 .276-.224.5-.5.5h-1c-.276 0-.5-.224-.5-.5v-1c0-.276.224-.5.5-.5zm0-8h1c.276 0 .5.224.5.5V8l-.5 3-1 .5L9 8V5.5c0-.276.224-.5.5-.5z"/></svg>
+    </div>
+    <div>
+      <p class="font-semibold">Work in progress!</p>
+      <p class="text-sm">More detailed documentation is coming soon, but in the meantime here&apos;s a quick class reference.</p>
+    </div>
+  </div>
+</div>
+<p>Control an element&apos;s padding and margin using the <code>.p{side?}-{size}</code>, <code>.m{side?}-{size}</code>, and <code>.-m{side?}-{size}</code> utilities.</p>
+<p>For example, <code>.pt-2</code> would add <code>.5rem</code> of padding to the top of the element, <code>.mx-0</code> would make the horizontal margin zero, and <code>.-mb-6</code> would add a <code>1.5rem</code> negative margin to the bottom of an element.</p>
+<div class="flex items-start mt-8 text-sm">
+  <div class="pr-12">
+    <div class="mb-3 text-grey-darker uppercase">Class</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">p</code> Padding</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">m</code> Margin</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">-m</code> Negative Margin</div>
+  </div>
+  <div class="pl-12 pr-12 border-l">
+    <div class="mb-3 text-grey-darker"><span class="uppercase">Side</span> <span class="text-grey-dark text-xs">(optional)</span></div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded bg-grey-lighter">&#xA0;</code> All <em class="text-xs text-grey-dark">(default)</em></div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">t</code> Top</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">r</code> Right</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">b</code> Bottom</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">l</code> Left</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">x</code> Horizontal</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">y</code> Vertical</div>
+  </div>
+  <div class="pl-12 border-l">
+    <div class="mb-3 text-grey-darker uppercase">Space</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">0</code> 0</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">1</code> 0.25rem</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">2</code> 0.5rem</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">3</code> 0.75rem</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">4</code> 1rem</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">5</code> 1.25rem</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">6</code> 1.5rem</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">8</code> 2rem</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">10</code> 2.5rem</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">12</code> 3rem</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">16</code> 4rem</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">20</code> 5rem</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">24</code> 6rem</div>
+    <div><code class="inline-block my-1 mr-1 px-2 py-1 font-mono border rounded">32</code> 8rem</div>
+    <div><code class="inline-block my-1 mr-1 px-1 py-1 font-mono border rounded">px</code> 1px</div>
+    <div><code class="inline-block my-1 mr-1 px-1 py-1 font-mono border rounded">auto</code> auto <span class="text-grey-dark text-xs">(margins only)</span></div>
+  </div>
+</div>
+<h2>Customizing</h2>
+<h3>Responsive and State Variants</h3>
+<p>By default, only responsive variants are generated for margin, negative margin and padding utilities.</p>
+<p>You can control which variants are generated for the list utilities by modifying the <code>margin</code>, <code>negativeMargin</code> and <code>padding</code> property in the <code>modules</code> section of your Tailwind config file.</p>
+<p>For example, this config will <em>also</em> generate hover and focus variants of the margin utilities, hover variants of the negative margin utilities, and focus variants of the padding utilities:</p>
+<pre><code class="language-js">{
+    // ...
+    modules: {
+        // ...
+        margin: [&apos;responsive&apos;, &apos;hover&apos;, &apos;focus&apos;],
+        negativeMargin: [&apos;responsive&apos;, &apos;hover&apos;],
+        padding: [&apos;responsive&apos;, &apos;focus&apos;],
+    }
+}</code></pre>
+<h3>Disabling</h3>
+<p>If you aren&apos;t using the margin, the negative margin, or padding utilities in your project, you can disable them entirely by setting the <code>margin</code>, <code>negativeMargin</code> and <code>padding</code> property to <code>false</code> in the <code>modules</code> section of your config file:</p>
+<pre><code class="language-js">{
+    // ...
+    modules: {
+        // ...
+        margin: false,
+        negativeMargin: false,
+        padding: false,
+    }
+}</code></pre>              </div>
+
+              
+              
+              
+
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+
+        
+      </div>
+      
+
+
+    </div>
+    
+
+  </div>
+</div>
+
+
+<svg style="height: 0; width: 0; position: absolute; visibility: hidden;">
+  <defs>
+    <linearGradient x1="0%" y1="0%" y2="100%" id="logoGradient">
+      <stop stop-color="#2383AE" offset="0%"/>
+      <stop stop-color="#6DD7B9" offset="100%"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+  <!-- Google Analytics  -->
+  
+  
+
+
+  <!-- Algolia DocSearch  -->
+  
+  
+
+
+
+
+
+      <script src="/assets/anchor.min.js"></script>
+      <script>
+        anchors.options.class = 'text-grey-dark';
+        anchors.add();
+      </script>
+    </body></html>

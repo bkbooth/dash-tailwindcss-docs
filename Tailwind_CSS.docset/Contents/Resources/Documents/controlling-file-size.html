@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="en" class="bg-white antialiased"><head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Controlling File Size</title>
+      <link rel="stylesheet" href="/assets/styles-tailwind.css">
+      <link rel="stylesheet" href="/assets/styles-dash.css">
+    </head>
+<body data-sidebar-visible="true" class="font-source-sans font-normal text-black leading-normal">
+
+
+
+
+
+
+
+
+<div class="w-full max-w-screen-xl mx-auto px-6">
+  <div class="lg:flex -mx-6">
+
+    
+    
+    
+
+    
+    <div id="content-wrapper" class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 ">
+
+      
+      <div id="content">
+
+        
+        <div id="app" class="flex" v-cloak>
+
+          
+          <div class="pt-24 pb-8 lg:pt-28 w-full">
+            <div class="markdown mb-6 px-6 max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+                              <h1>Controlling File Size</h1>
+              
+                              <div class="text-xl text-grey-dark mb-4">
+                  Strategies for keeping your generated CSS small and performant.
+                </div>
+                          </div>
+            <div class="flex">
+              <div class="markdown px-6 xl:px-12 w-full max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+                <p>Using the default configuration, Tailwind CSS comes in at <strong>36.4kb minified and gzipped.</strong></p>
+<p>Here&apos;s a few other popular frameworks for comparison:</p>
+<ul>
+<li>Bootstrap: 22.1kb</li>
+<li>Bulma: 22.0kb</li>
+<li>Foundation: 16.7kb</li>
+<li>Tachyons: 13.6kb</li>
+</ul>
+<p>By comparison Tailwind seems really heavy <em>(over 1.5x larger than Bootstrap!)</em>, but it turns out that this comparison isn&apos;t totally fair.</p>
+<p>Tailwind is not a pre-packaged set of styles like a traditional CSS framework. Instead, Tailwind is a tool for generating CSS based on the style guide you define for your own project.</p>
+<p>Because of this, <strong>the generated file size will vary wildly from project to project</strong> depending on your configuration file.</p>
+<p>The default configuration file provides a <strong>very generous</strong> set of colors, breakpoints, sizes, margins, etc. by design. When you pull Tailwind down to prototype something, create a CodePen demo, or just try out the workflow, we want the experience to be as enjoyable and fluid as possible.</p>
+<p>We don&apos;t want you to have to go and write new CSS because we didn&apos;t provide enough padding helpers out of the box, or because you wanted to use an orange color scheme for your demo and we only gave you blue.</p>
+<p>This comes with a trade-off though: The default Tailwind build is significantly heavier than it would be on a real project with a purpose-built configuration file.</p>
+<p>That said, here are a few strategies you can use to keep your generated CSS small and performant.</p>
+<h2>Limiting your color palette</h2>
+<p>The default color palette includes a whopping <a href="colors.html">73 colors</a> to make sure that if you&apos;re pulling Tailwind in for a prototype or demo, the color you&apos;re looking for is already there.</p>
+<p>These colors are used for background colors, border colors, and text colors, all of which also have <code>hover:</code> variants, all of which have responsive variants at the five default screen sizes.</p>
+<p>This means that by default, <strong>there are 2190 classes generated</strong> from this color palette, out of a total 4732 classes in the entire default build.</p>
+<p>Here&apos;s how using a smaller color palette affects the overall file size:</p>
+<ul>
+<li>73 colors <em>(default)</em>: 36.4kb</li>
+<li>50 colors: 30.4kb</li>
+<li>25 colors: 18.3kb</li>
+</ul>
+<p>Not only can colors be removed globally, you can also remove them for a specific module.</p>
+<p>For example, maybe you need 25 background colors but only 15 text colors. Instead of assigning your entire <code>colors</code> variable to the <code>textColors</code> property in your config, assign only the colors you need:</p>
+<pre><code class="language-js">// ...
+
+module.exports = {
+  // ...
+
+  textColors: {
+    &apos;black&apos;: colors[&apos;black&apos;],
+    &apos;grey-darker&apos;: colors[&apos;grey-darker&apos;],
+    &apos;grey-dark&apos;: colors[&apos;grey-dark&apos;],
+    &apos;red-dark&apos;: colors[&apos;red-dark&apos;],
+    &apos;red&apos;: colors[&apos;red&apos;],
+    &apos;blue-dark&apos;: colors[&apos;blue-dark&apos;],
+    &apos;blue&apos;: colors[&apos;blue&apos;],
+    // ...
+  }
+}
+</code></pre>
+<p>Since your config file is just JavaScript, you could even use a function like <a href="https://lodash.com/docs/4.17.4#pick"><code>lodash#pick</code></a> to make this a little less monotonous:</p>
+<pre><code class="language-js">// ...
+
+module.exports = {
+  // ...
+
+  textColors: _.pick(colors, [
+    &apos;black&apos;,
+    &apos;grey-darker&apos;,
+    &apos;grey-dark&apos;,
+    &apos;red-dark&apos;,
+    &apos;red&apos;,
+    &apos;blue-dark&apos;,
+    &apos;blue&apos;,
+  ]),
+}</code></pre>
+<h2>Removing unused breakpoints</h2>
+<p>Since every Tailwind utility is copied for every screen size, using fewer screen sizes can have a huge impact on overall file size.</p>
+<p>Here&apos;s how defining fewer screens affects the output:</p>
+<ul>
+<li>5 screen sizes <em>(default)</em>: 36.4kb</li>
+<li>4 screen sizes: 29.4kb</li>
+<li>3 screen sizes: 22.4kb</li>
+<li>2 screen sizes: 15.4kb</li>
+<li>1 screen size: 8.4kb</li>
+</ul>
+<p>If you only need 3 screen sizes and 35 colors, you&apos;re down to 13.4kb without changing anything else.</p>
+<h2>Disabling unused modules and variants</h2>
+<p>If you don&apos;t expect to need a module at all in your project, you can completely disable it by setting it to <code>false</code> in your config file:</p>
+<pre><code class="language-js">// ...
+
+module.exports = {
+  // ...
+
+  modules: {
+    // ...
+    float: false,
+    // ...
+  },
+
+  // ...
+}</code></pre>
+<p>If you need a module but don&apos;t need the responsive versions, set it to an empty array:</p>
+<pre><code class="language-js">// ...
+
+module.exports = {
+  // ...
+
+  modules: {
+    // ...
+    appearance: [],
+    // ...
+  },
+
+  // ...
+}</code></pre>
+<p>These are mostly small wins compared to limiting your color palette or using fewer breakpoints, but they can still add up.</p>
+<h2>Removing unused CSS with PurgeCSS</h2>
+<p><a href="https://github.com/FullHuman/purgecss">PurgeCSS</a> is a tool for removing unused CSS from your project. It works by building a list of all of the class names used in your templates, then comparing that against your CSS and removing any CSS rules that you aren&apos;t using.</p>
+<p><strong>Combining it with Tailwind is a match made in heaven.</strong></p>
+<p>You can have as many colors and breakpoints as you like, generate responsive, hover, and focus variants for every module, and your generated CSS file will never be bigger than absolutely necessary.</p>
+<p>With PurgeCSS, <strong>you&apos;ll have a hard time generating CSS that <em>isn&apos;t</em> under 10kb minified and gzipped.</strong></p>
+<p>Here&apos;s an example of what it might look like to setup with Laravel Mix:</p>
+<pre><code class="language-js">// Based on https://medium.com/@AndrewDelPrete/using-purifycss-to-remove-unused-tailwind-css-classes-173b3ee8ee01
+
+let mix = require(&quot;laravel-mix&quot;);
+let tailwindcss = require(&quot;tailwindcss&quot;);
+let glob = require(&quot;glob-all&quot;);
+let PurgecssPlugin = require(&quot;purgecss-webpack-plugin&quot;);
+
+// Custom PurgeCSS extractor for Tailwind that allows special characters in
+// class names.
+//
+// https://github.com/FullHuman/purgecss#extractor
+class TailwindExtractor {
+  static extract(content) {
+    return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
+  }
+}
+
+mix.postCss(&quot;./src/styles.css&quot;, &quot;public/css&quot;, [tailwindcss(&quot;./tailwind.js&quot;)]);
+
+// Only run PurgeCSS during production builds for faster development builds
+// and so you still have the full set of utilities available during
+// development.
+if (mix.inProduction()) {
+  mix.webpackConfig({
+    plugins: [
+      new PurgecssPlugin({
+
+        // Specify the locations of any files you want to scan for class names.
+        paths: glob.sync([
+          path.join(__dirname, &quot;resources/views/**/*.blade.php&quot;),
+          path.join(__dirname, &quot;resources/js/**/*.vue&quot;)
+        ]),
+        extractors: [
+          {
+            extractor: TailwindExtractor,
+
+            // Specify the file extensions to include when scanning for
+            // class names.
+            extensions: [&quot;html&quot;, &quot;js&quot;, &quot;php&quot;, &quot;vue&quot;]
+          }
+        ]
+      })
+    ]
+  });
+}</code></pre>
+<p>For more information on working with PurgeCSS, <a href="https://github.com/FullHuman/purgecss">visit the PurgeCSS documentation</a>.</p>              </div>
+
+              
+              
+              
+
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+
+        
+      </div>
+      
+
+
+    </div>
+    
+
+  </div>
+</div>
+
+
+<svg style="height: 0; width: 0; position: absolute; visibility: hidden;">
+  <defs>
+    <linearGradient x1="0%" y1="0%" y2="100%" id="logoGradient">
+      <stop stop-color="#2383AE" offset="0%"/>
+      <stop stop-color="#6DD7B9" offset="100%"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+  <!-- Google Analytics  -->
+  
+  
+
+
+  <!-- Algolia DocSearch  -->
+  
+  
+
+
+
+
+
+      <script src="/assets/anchor.min.js"></script>
+      <script>
+        anchors.options.class = 'text-grey-dark';
+        anchors.add();
+      </script>
+    </body></html>

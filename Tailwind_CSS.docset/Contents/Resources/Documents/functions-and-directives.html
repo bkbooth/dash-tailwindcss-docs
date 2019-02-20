@@ -1,0 +1,334 @@
+<!DOCTYPE html><html lang="en" class="bg-white antialiased"><head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Functions &amp; Directives</title>
+      <link rel="stylesheet" href="/assets/styles-tailwind.css">
+      <link rel="stylesheet" href="/assets/styles-dash.css">
+    </head>
+<body data-sidebar-visible="true" class="font-source-sans font-normal text-black leading-normal">
+
+
+
+
+
+
+
+
+<div class="w-full max-w-screen-xl mx-auto px-6">
+  <div class="lg:flex -mx-6">
+
+    
+    
+    
+
+    
+    <div id="content-wrapper" class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 ">
+
+      
+      <div id="content">
+
+        
+        <div id="app" class="flex" v-cloak>
+
+          
+          <div class="pt-24 pb-8 lg:pt-28 w-full">
+            <div class="markdown mb-6 px-6 max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+                              <h1>Functions &amp; Directives</h1>
+              
+                          </div>
+            <div class="flex">
+              <div class="markdown px-6 xl:px-12 w-full max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+                <p>Tailwind exposes a few custom CSS functions and directives that can be used in your actual CSS files.</p>
+<h2>@tailwind</h2>
+<p>Use the <code>@tailwind</code> directive to insert Tailwind&apos;s <code>preflight</code>, <code>utilities</code> and <code>screens</code> styles into your CSS. Here&apos;s a full example of how you might do this:</p>
+<pre><code class="language-less">/**
+ * This injects Tailwind&apos;s base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
+ */
+@tailwind preflight;
+
+/**
+ * This injects any component classes registered by plugins.
+ */
+@tailwind components;
+
+/**
+ * This injects all of Tailwind&apos;s utility classes, generated based on your
+ * config file. It also injects any utility classes registered by plugins.
+ */
+@tailwind utilities;
+
+/**
+ * Use this directive to control where Tailwind injects the responsive
+ * variations of each utility.
+ *
+ * If omitted, Tailwind will append these classes to the very end of
+ * your stylesheet by default.
+ */
+ @tailwind screens;</code></pre>
+<h2>@apply</h2>
+<p>Use <code>@apply</code> to mix-in the contents of existing classes into your custom CSS.</p>
+<p>This is extremely useful when you find a common utility pattern in your HTML that you&apos;d like to extract to a new component.</p>
+<pre><code class="language-less">.btn {
+  @apply font-bold py-2 px-4 rounded;
+}
+.btn-blue {
+  @apply bg-blue text-white;
+}
+.btn-blue:hover {
+  @apply bg-blue-dark;
+}</code></pre>
+<p>Rules can be listed on a single line or with multiple calls to <code>@apply</code>:</p>
+<pre><code class="language-less">.btn {
+  @apply font-bold;
+  @apply py-2;
+  @apply px-4;
+  @apply rounded;
+}</code></pre>
+<p>You can mix <code>@apply</code> declarations with normal CSS declarations too of course:</p>
+<pre><code class="language-less">.btn:hover {
+  @apply bg-blue-dark;
+  transform: translateY(-1px);
+}</code></pre>
+<p>Any rules mixed in with <code>@apply</code> will have <code>!important</code> <strong>removed</strong> by default to avoid specificity issues:</p>
+<pre><code class="language-less">// Input
+.foo {
+  @apply bar;
+}
+
+.bar {
+  color: blue !important;
+}
+
+// Output
+.foo {
+  color: blue;
+}
+
+.bar {
+  color: blue !important;
+}</code></pre>
+<p>If you&apos;d like to <code>@apply</code> an existing class and make it <code>!important</code>, simply add <code>!important</code> to the end of the declaration:</p>
+<pre><code class="language-less">// Input
+.btn {
+  @apply font-bold py-2 px-4 rounded !important;
+}
+
+// Output
+.btn {
+  font-weight: 700 !important;
+  padding-top: .5rem !important;
+  padding-bottom: .5rem !important;
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+  border-radius: .25rem !important;
+}</code></pre>
+<p>Note that <code>@apply</code> <strong>will not work</strong> for mixing in hover, focus, or responsive variants of another utility. Instead, mix in the plain version of that utility into the appropriate pseudo-selector or a new media query:</p>
+<pre><code class="language-less">// Won&apos;t work:
+.btn {
+  @apply block bg-red;
+  @apply md:inline-block;
+  @apply hover:bg-blue;
+}
+
+// Do this instead:
+.btn {
+  @apply block bg-red;
+}
+.btn:hover {
+  @apply bg-blue;
+}
+@screen md {
+  .btn {
+    @apply inline-block;
+  }
+}</code></pre>
+<p>If you&apos;ve <a href="configuration.html#prefix">configured a prefix</a> for your utilities, you can optionally omit the prefix when using <code>@apply</code> if you prefer a terser syntax:</p>
+<pre><code class="language-less">// Both of these will work
+.btn {
+  @apply tw-font-bold tw-py-2 tw-px-4 tw-rounded;
+}
+.btn {
+  @apply font-bold py-2 px-4 rounded;
+}</code></pre>
+<h2>@variants</h2>
+<p>You can generate <code>responsive</code>, <code>hover</code>, <code>focus</code>, <code>active</code>, and <code>group-hover</code> versions of your own utilities by wrapping their definitions in the <code>@variants</code> directive</p>
+<pre><code class="language-less">@variants focus, hover {
+  .banana {
+    color: yellow;
+  }
+  .chocolate {
+    color: brown;
+  }
+}</code></pre>
+<p>This will generate the following CSS:</p>
+<pre><code class="language-less">.banana {
+  color: yellow;
+}
+.chocolate {
+  color: brown;
+}
+.focus\:banana:focus {
+  color: yellow;
+}
+.focus\:chocolate:focus {
+  color: brown;
+}
+.hover\:banana:hover {
+  color: yellow;
+}
+.hover\:chocolate:hover {
+  color: brown;
+}</code></pre>
+<p>It&apos;s important to note that <strong>variants are generated in the order you specify them</strong>.</p>
+<p>So if you want focus utilities to take priority over hover utilities for example, make sure focus comes <em>before</em> hover in the list:</p>
+<pre><code class="language-less">// Input
+@variants hover, focus {
+  .banana {
+    color: yellow;
+  }
+}
+
+// Output
+.banana {
+  color: yellow;
+}
+.hover\:banana:hover {
+  color: yellow;
+}
+.focus\:banana:focus {
+  color: yellow;
+}</code></pre>
+<p>The <code>@variants</code> at-rule supports all of the values that are supported in the <code>modules</code> section of your config file:</p>
+<ul>
+<li><code>responsive</code></li>
+<li><code>hover</code></li>
+<li><code>focus</code></li>
+<li><code>active</code></li>
+<li><code>group-hover</code></li>
+<li><code>focus-within</code></li>
+</ul>
+<p>...as well as any <a href="plugins.html#adding-variants">custom variants</a> added through plugins.</p>
+<h2>@responsive</h2>
+<p>You can generate responsive versions of your own classes by wrapping their definitions in the <code>@responsive</code> directive:</p>
+<pre><code class="language-less">@responsive {
+  .bg-gradient-brand {
+    background-image: linear-gradient(blue, green);
+  }
+}</code></pre>
+<p>Using the default breakpoints, this would generate these classes:</p>
+<pre><code class="language-less">.bg-gradient-brand {
+  background-image: linear-gradient(blue, green);
+}
+
+// ...
+
+@media(min-width: 576px) {
+  .sm\:bg-gradient-brand {
+    background-image: linear-gradient(blue, green);
+  }
+  // ...
+}
+
+@media(min-width: 768px) {
+  .md\:bg-gradient-brand {
+    background-image: linear-gradient(blue, green);
+  }
+  // ...
+}
+
+@media(min-width: 992px) {
+  .lg\:bg-gradient-brand {
+    background-image: linear-gradient(blue, green);
+  }
+  // ...
+}
+
+@media(min-width: 1200px) {
+  .xl\:bg-gradient-brand {
+    background-image: linear-gradient(blue, green);
+  }
+  // ...
+}</code></pre>
+<p>The responsive versions will be added to Tailwind&apos;s existing media queries <strong>at the end of your stylesheet.</strong> This makes sure that classes with a responsive prefix always defeat non-responsive classes that are targeting the same CSS property.</p>
+<h2>@screen</h2>
+<p>The <code>@screen</code> directive allows you to create media queries that reference your breakpoints by name instead of duplicating their values in your own CSS.</p>
+<p>For example, say you have a <code>sm</code> breakpoint at <code>576px</code> and you need to write some custom CSS that references this breakpoint.</p>
+<p>Instead of writing a raw media query that duplicates that value like this:</p>
+<pre><code class="language-less">@media (min-width: 576px) {
+  /* ... */
+}</code></pre>
+<p>...you can use the <code>@screen</code> directive and reference the breakpoint by name:</p>
+<pre><code class="language-less">@screen sm {
+  /* ... */
+}</code></pre>
+<h2>config()</h2>
+<p>While it&apos;s recommended to use the <code>@apply</code> directive to compose custom CSS out of existing utility classes whenever possible, sometimes you need direct access to your Tailwind config values.</p>
+<p>Use the <code>config()</code> function to access your Tailwind config values using dot notation:</p>
+<pre><code class="language-less">// Source
+.error {
+  font-size: config(&apos;textSizes.xs&apos;);
+  color: config(&apos;colors.red-darker&apos;);
+}
+
+// Output
+.error {
+  font-size: .75rem;
+  color: #a61611;
+}</code></pre>              </div>
+
+              
+              
+              
+
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+
+        
+      </div>
+      
+
+
+    </div>
+    
+
+  </div>
+</div>
+
+
+<svg style="height: 0; width: 0; position: absolute; visibility: hidden;">
+  <defs>
+    <linearGradient x1="0%" y1="0%" y2="100%" id="logoGradient">
+      <stop stop-color="#2383AE" offset="0%"/>
+      <stop stop-color="#6DD7B9" offset="100%"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+  <!-- Google Analytics  -->
+  
+  
+
+
+  <!-- Algolia DocSearch  -->
+  
+  
+
+
+
+
+
+      <script src="/assets/anchor.min.js"></script>
+      <script>
+        anchors.options.class = 'text-grey-dark';
+        anchors.add();
+      </script>
+    </body></html>

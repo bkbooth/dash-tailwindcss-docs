@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="en" class="bg-white antialiased"><head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>SVG</title>
+      <link rel="stylesheet" href="/assets/styles-tailwind.css">
+      <link rel="stylesheet" href="/assets/styles-dash.css">
+    </head>
+<body data-sidebar-visible="true" class="font-source-sans font-normal text-black leading-normal">
+
+
+
+
+
+
+
+
+<div class="w-full max-w-screen-xl mx-auto px-6">
+  <div class="lg:flex -mx-6">
+
+    
+    
+    
+
+    
+    <div id="content-wrapper" class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 ">
+
+      
+      <div id="content">
+
+        
+        <div id="app" class="flex" v-cloak>
+
+          
+          <div class="pt-24 pb-8 lg:pt-28 w-full">
+            <div class="markdown mb-6 px-6 max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+                              <h1>SVG</h1>
+              
+                              <div class="text-xl text-grey-dark mb-4">
+                  Utilities for styling SVG elements.
+                </div>
+                          </div>
+            <div class="flex">
+              <div class="markdown px-6 xl:px-12 w-full max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+                <h2 style="visibility: hidden; font-size: 0; margin: 0;">Class reference</h2>
+<div class="border-t border-b border-grey-light overflow-hidden relative">
+  <div class=" overflow-y-auto scrollbar-w-2 scrollbar-track-grey-lighter scrollbar-thumb-rounded scrollbar-thumb-grey scrolling-touch">
+    <table class="w-full text-left table-collapse">
+      <thead>
+        <tr>
+          <th class="text-sm font-semibold text-grey-darker p-2 bg-grey-lightest">Class</th>
+          <th class="text-sm font-semibold text-grey-darker p-2 bg-grey-lightest">Properties</th>
+        </tr>
+      </thead>
+      <tbody class="align-baseline">
+                <tr>
+          <td class="p-2 border-t border-grey-light font-mono text-xs text-purple-dark whitespace-no-wrap">.fill-current</td>
+          <td class="p-2 border-t border-grey-light font-mono text-xs text-blue-dark whitespace-pre">fill: currentColor;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.stroke-current</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">stroke: currentColor;</td>
+        </tr>
+              </tbody>
+    </table>
+  </div>
+</div>
+<h2>Fill color</h2>
+<p>Use <code>.fill-current</code> to set the fill color of an SVG to the current text color. This makes it easy to set an element&apos;s fill color by combining this class with an existing <a href="text-color.html">text color utility</a>.</p>
+<p>Useful for styling icon sets like <a href="http://www.zondicons.com/">Zondicons</a> that are drawn entirely with fills.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 text-center">
+    <svg class="fill-current text-teal inline-block h-12 w-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+  <path d="M18 9.87V20H2V9.87a4.25 4.25 0 0 0 3-.38V14h10V9.5a4.26 4.26 0 0 0 3 .37zM3 0h4l-.67 6.03A3.43 3.43 0 0 1 3 9C1.34 9 .42 7.73.95 6.15L3 0zm5 0h4l.7 6.3c.17 1.5-.91 2.7-2.42 2.7h-.56A2.38 2.38 0 0 1 7.3 6.3L8 0zm5 0h4l2.05 6.15C19.58 7.73 18.65 9 17 9a3.42 3.42 0 0 1-3.33-2.97L13 0z"/>
+</svg>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;svg class=&quot;fill-current text-teal inline-block h-12 w-12&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 20 20&quot;&gt;
+  &lt;path d=&quot;M18 9.87V20H2V9.87a4.25 4.25 0 0 0 3-.38V14h10V9.5a4.26 4.26 0 0 0 3 .37zM3 0h4l-.67 6.03A3.43 3.43 0 0 1 3 9C1.34 9 .42 7.73.95 6.15L3 0zm5 0h4l.7 6.3c.17 1.5-.91 2.7-2.42 2.7h-.56A2.38 2.38 0 0 1 7.3 6.3L8 0zm5 0h4l2.05 6.15C19.58 7.73 18.65 9 17 9a3.42 3.42 0 0 1-3.33-2.97L13 0z&quot;/&gt;
+&lt;/svg&gt;</code></pre>
+  </div>
+</div>
+<h2>Stroke color</h2>
+<p>Use <code>.stroke-current</code> to set the stroke color of an SVG to the current text color. This makes it easy to set an element&apos;s stroke color by combining this class with an existing <a href="text-color.html">text color utility</a>.</p>
+<p>Useful for styling icon sets like <a href="https://feathericons.com/">Feather</a> that are drawn entirely with strokes.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 text-center">
+    <svg class="stroke-current text-purple inline-block h-12 w-12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="8" cy="21" r="2"/>
+    <circle cx="20" cy="21" r="2"/>
+    <path d="M5.67 6H23l-1.68 8.39a2 2 0 0 1-2 1.61H8.75a2 2 0 0 1-2-1.74L5.23 2.74A2 2 0 0 0 3.25 1H1"/>
+</svg>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;svg class=&quot;stroke-current text-purple inline-block h-12 w-12&quot; viewBox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; fill=&quot;none&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;
+    &lt;circle cx=&quot;8&quot; cy=&quot;21&quot; r=&quot;2&quot;&gt;&lt;/circle&gt;
+    &lt;circle cx=&quot;20&quot; cy=&quot;21&quot; r=&quot;2&quot;&gt;&lt;/circle&gt;
+    &lt;path d=&quot;M5.67 6H23l-1.68 8.39a2 2 0 0 1-2 1.61H8.75a2 2 0 0 1-2-1.74L5.23 2.74A2 2 0 0 0 3.25 1H1&quot;&gt;&lt;/path&gt;
+&lt;/svg&gt;</code></pre>
+  </div>
+</div>
+<h2>Sizing</h2>
+<p>Tailwind doesn&apos;t provide SVG-specific sizing utilities, but sizing SVGs is a perfect use case for the existing <a href="width.html">width</a> and <a href="height.html">height</a> utilities.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 flex justify-around items-end">
+    <svg class="h-8 w-8 fill-current text-blue inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+  <path d="M18 9.87V20H2V9.87a4.25 4.25 0 0 0 3-.38V14h10V9.5a4.26 4.26 0 0 0 3 .37zM3 0h4l-.67 6.03A3.43 3.43 0 0 1 3 9C1.34 9 .42 7.73.95 6.15L3 0zm5 0h4l.7 6.3c.17 1.5-.91 2.7-2.42 2.7h-.56A2.38 2.38 0 0 1 7.3 6.3L8 0zm5 0h4l2.05 6.15C19.58 7.73 18.65 9 17 9a3.42 3.42 0 0 1-3.33-2.97L13 0z"/>
+</svg>
+<svg class="h-12 w-12 fill-current text-blue inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+  <path d="M18 9.87V20H2V9.87a4.25 4.25 0 0 0 3-.38V14h10V9.5a4.26 4.26 0 0 0 3 .37zM3 0h4l-.67 6.03A3.43 3.43 0 0 1 3 9C1.34 9 .42 7.73.95 6.15L3 0zm5 0h4l.7 6.3c.17 1.5-.91 2.7-2.42 2.7h-.56A2.38 2.38 0 0 1 7.3 6.3L8 0zm5 0h4l2.05 6.15C19.58 7.73 18.65 9 17 9a3.42 3.42 0 0 1-3.33-2.97L13 0z"/>
+</svg>
+<svg class="h-16 w-16 fill-current text-blue inline-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+  <path d="M18 9.87V20H2V9.87a4.25 4.25 0 0 0 3-.38V14h10V9.5a4.26 4.26 0 0 0 3 .37zM3 0h4l-.67 6.03A3.43 3.43 0 0 1 3 9C1.34 9 .42 7.73.95 6.15L3 0zm5 0h4l.7 6.3c.17 1.5-.91 2.7-2.42 2.7h-.56A2.38 2.38 0 0 1 7.3 6.3L8 0zm5 0h4l2.05 6.15C19.58 7.73 18.65 9 17 9a3.42 3.42 0 0 1-3.33-2.97L13 0z"/>
+</svg>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;svg class=&quot;h-8 w-8 fill-current text-blue inline-block&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 20 20&quot;&gt;
+  &lt;path d=&quot;M18 9.87V20H2V9.87a4.25 4.25 0 0 0 3-.38V14h10V9.5a4.26 4.26 0 0 0 3 .37zM3 0h4l-.67 6.03A3.43 3.43 0 0 1 3 9C1.34 9 .42 7.73.95 6.15L3 0zm5 0h4l.7 6.3c.17 1.5-.91 2.7-2.42 2.7h-.56A2.38 2.38 0 0 1 7.3 6.3L8 0zm5 0h4l2.05 6.15C19.58 7.73 18.65 9 17 9a3.42 3.42 0 0 1-3.33-2.97L13 0z&quot;/&gt;
+&lt;/svg&gt;
+&lt;svg class=&quot;h-12 w-12 fill-current text-blue inline-block&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 20 20&quot;&gt;
+  &lt;path d=&quot;M18 9.87V20H2V9.87a4.25 4.25 0 0 0 3-.38V14h10V9.5a4.26 4.26 0 0 0 3 .37zM3 0h4l-.67 6.03A3.43 3.43 0 0 1 3 9C1.34 9 .42 7.73.95 6.15L3 0zm5 0h4l.7 6.3c.17 1.5-.91 2.7-2.42 2.7h-.56A2.38 2.38 0 0 1 7.3 6.3L8 0zm5 0h4l2.05 6.15C19.58 7.73 18.65 9 17 9a3.42 3.42 0 0 1-3.33-2.97L13 0z&quot;/&gt;
+&lt;/svg&gt;
+&lt;svg class=&quot;h-16 w-16 fill-current text-blue inline-block&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 20 20&quot;&gt;
+  &lt;path d=&quot;M18 9.87V20H2V9.87a4.25 4.25 0 0 0 3-.38V14h10V9.5a4.26 4.26 0 0 0 3 .37zM3 0h4l-.67 6.03A3.43 3.43 0 0 1 3 9C1.34 9 .42 7.73.95 6.15L3 0zm5 0h4l.7 6.3c.17 1.5-.91 2.7-2.42 2.7h-.56A2.38 2.38 0 0 1 7.3 6.3L8 0zm5 0h4l2.05 6.15C19.58 7.73 18.65 9 17 9a3.42 3.42 0 0 1-3.33-2.97L13 0z&quot;/&gt;
+&lt;/svg&gt;</code></pre>
+  </div>
+</div>
+<h2>Customizing</h2>
+<h3>Fill colors</h3>
+<p>Control which fill utilities Tailwind generates by customizing the <code>svgFill</code> key in your Tailwind config file:</p>
+<div class="border border-grey-light rounded mb-8 overflow-hidden">
+  <div class="bg-grey-lightest p-4 font-mono text-xs">
+    <div class="whitespace-pre text-grey-dark">{</div>
+    <div class="whitespace-pre text-grey-light">  // ...</div>
+    <div class="whitespace-pre text-grey-dark"><span class="text-purple-dark">  svgFill</span>: {</div>
+    <div><div class="text-grey"><span class="text-grey">-</span>&#xA0;&#xA0;&#xA0;&apos;current&apos;: &apos;currentColor&apos;,</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;&apos;red&apos;: colors[&apos;red&apos;],</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;&apos;blue&apos;: colors[&apos;blue&apos;],</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;&apos;green&apos;: colors[&apos;green&apos;],</div></div>
+    <div class="whitespace-pre text-grey-dark">  }</div>
+    <div class="whitespace-pre text-grey-dark">}</div>
+  </div>
+</div>
+<h3>Stroke colors</h3>
+<p>Control which stroke utilities Tailwind generates by customizing the <code>svgStroke</code> key in your Tailwind config file:</p>
+<div class="border border-grey-light rounded mb-8 overflow-hidden">
+  <div class="bg-grey-lightest p-4 font-mono text-xs">
+    <div class="whitespace-pre text-grey-dark">{</div>
+    <div class="whitespace-pre text-grey-light">  // ...</div>
+    <div class="whitespace-pre text-grey-dark"><span class="text-purple-dark">  svgStroke</span>: {</div>
+    <div><div class="text-grey"><span class="text-grey">-</span>&#xA0;&#xA0;&#xA0;&apos;current&apos;: &apos;currentColor&apos;,</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;&apos;red&apos;: colors[&apos;red&apos;],</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;&apos;blue&apos;: colors[&apos;blue&apos;],</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;&apos;green&apos;: colors[&apos;green&apos;],</div></div>
+    <div class="whitespace-pre text-grey-dark">  }</div>
+    <div class="whitespace-pre text-grey-dark">}</div>
+  </div>
+</div>
+<h3>Responsive and State Variants</h3>
+<p>By default, no responsive, hover, focus, active, or group-hover variants are generated for fill and stroke utilities.</p>
+<p>You can control which variants are generated for both fill and stroke utilities by modifying the <code>svgFill</code> and <code>svgStroke</code> properties in the <code>modules</code> section of your Tailwind config file.</p>
+<p>For example, this config will generate responsive and hover variants of the fill utilities and focus variants of the stroke utilities:</p>
+<pre><code class="language-js">{
+    // ...
+    modules: {
+        // ...
+        svgFill: [&apos;responsive&apos;, &apos;hover&apos;],
+        svgStroke: [&apos;focus&apos;],
+    }
+}</code></pre>
+<h3>Disabling</h3>
+<p>If you aren&apos;t using the fill or stroke utilities in your project, you can disable them entirely by setting the <code>svgFill</code> and <code>svgStroke</code> properties to <code>false</code> in the <code>modules</code> section of your config file:</p>
+<pre><code class="language-js">{
+    // ...
+    modules: {
+        // ...
+        svgFill: false,
+        svgStroke: false,
+    }
+}</code></pre>              </div>
+
+              
+              
+              
+
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+
+        
+      </div>
+      
+
+
+    </div>
+    
+
+  </div>
+</div>
+
+
+<svg style="height: 0; width: 0; position: absolute; visibility: hidden;">
+  <defs>
+    <linearGradient x1="0%" y1="0%" y2="100%" id="logoGradient">
+      <stop stop-color="#2383AE" offset="0%"/>
+      <stop stop-color="#6DD7B9" offset="100%"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+  <!-- Google Analytics  -->
+  
+  
+
+
+  <!-- Algolia DocSearch  -->
+  
+  
+
+
+
+
+
+      <script src="/assets/anchor.min.js"></script>
+      <script>
+        anchors.options.class = 'text-grey-dark';
+        anchors.add();
+      </script>
+    </body></html>

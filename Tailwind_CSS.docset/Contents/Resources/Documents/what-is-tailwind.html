@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="en" class="bg-white antialiased"><head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>What is Tailwind?</title>
+      <link rel="stylesheet" href="/assets/styles-tailwind.css">
+      <link rel="stylesheet" href="/assets/styles-dash.css">
+    </head>
+<body data-sidebar-visible="true" class="font-source-sans font-normal text-black leading-normal">
+
+
+
+
+
+
+
+
+<div class="w-full max-w-screen-xl mx-auto px-6">
+  <div class="lg:flex -mx-6">
+
+    
+    
+    
+
+    
+    <div id="content-wrapper" class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 ">
+
+      
+      <div id="content">
+
+        
+        <div id="app" class="flex" v-cloak>
+
+          
+          <div class="pt-24 pb-8 lg:pt-28 w-full">
+            <div class="markdown mb-6 px-6 max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+              
+                          </div>
+            <div class="flex">
+              <div class="markdown px-6 xl:px-12 w-full max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+                <div class="flex items-center justify-center">
+  <svg class="h-20 w-20 sm:w-24 sm:h-24 block mr-4 -ml-4" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="0%" y1="0%" y2="100%" id="a"><stop stop-color="#2383AE" offset="0%"/><stop stop-color="#6DD7B9" offset="100%"/></linearGradient></defs><path d="M10 8c1.333-5.333 4.667-8 10-8 8 0 9 6 13 7 2.667.667 5-.333 7-3-1.333 5.333-4.667 8-10 8-8 0-9-6-13-7-2.667-.667-5 .333-7 3zM0 20c1.333-5.333 4.667-8 10-8 8 0 9 6 13 7 2.667.667 5-.333 7-3-1.333 5.333-4.667 8-10 8-8 0-9-6-13-7-2.667-.667-5 .333-7 3z" transform="translate(4 12)" fill="url(#a)" fill-rule="nonzero"/></svg>
+  <h1 class="text-center font-semibold text-4xl sm:text-5xl tracking-tight mb-1">Tailwind CSS</h1>
+</div>
+<div class="max-w-sm mx-auto text-center text-xl sm:text-2xl text-grey-dark mb-16">
+  <p class="leading-tight">
+   A utility-first CSS framework for rapidly building custom user interfaces.
+  </p>
+</div>
+<p>Tailwind is different from frameworks like Bootstrap, Foundation, or Bulma in that <strong>it&apos;s not a UI kit.</strong></p>
+<p>It doesn&apos;t have a default theme, and there are no built-in UI components.</p>
+<p>On the flip side, it also has no opinion about how your site should look and doesn&apos;t impose design decisions that you have to fight to undo.</p>
+<p>If you&apos;re looking for a framework that comes with a menu of predesigned widgets to build your site with, Tailwind might not be the right framework for you.</p>
+<p>But if you want a huge head start implementing a custom design with its own identity, Tailwind might be just what you&apos;re looking for.</p>
+<h2>Utility-first</h2>
+<p>Creating a framework for building custom UIs means you can&apos;t provide abstractions at the usual level of buttons, forms, cards, navbars, etc.</p>
+<p>Instead, Tailwind provides highly composable, low-level <em>utility classes</em> that make it easy to build complex user interfaces <strong>without encouraging any two sites to look the same.</strong></p>
+<p>Here&apos;s an example of a responsive contact card component built with Tailwind without writing a single line of CSS:</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 bg-grey-lighter py-8">
+    <div class="bg-white mx-auto max-w-sm shadow-lg rounded-lg overflow-hidden">
+  <div class="sm:flex sm:items-center px-6 py-4">
+    <img class="block h-16 sm:h-24 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0" src="https://avatars2.githubusercontent.com/u/4323180?s=400&amp;u=4962a4441fae9fba5f0f86456c6c506a21ffca4f&amp;v=4" alt>
+    <div class="text-center sm:text-left sm:flex-grow">
+      <div class="mb-4">
+        <p class="text-xl leading-tight">Adam Wathan</p>
+        <p class="text-sm leading-tight text-grey-dark">Developer at NothingWorks Inc.</p>
+      </div>
+      <div>
+        <button class="text-xs font-semibold rounded-full px-4 py-1 leading-normal bg-white border border-purple text-purple hover:bg-purple hover:text-white">Message</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;div class=&quot;bg-white mx-auto max-w-sm shadow-lg rounded-lg overflow-hidden&quot;&gt;
+  &lt;div class=&quot;sm:flex sm:items-center px-6 py-4&quot;&gt;
+    &lt;img class=&quot;block h-16 sm:h-24 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0&quot; src=&quot;https://avatars2.githubusercontent.com/u/4323180?s=400&amp;u=4962a4441fae9fba5f0f86456c6c506a21ffca4f&amp;v=4&quot; alt=&quot;&quot;&gt;
+    &lt;div class=&quot;text-center sm:text-left sm:flex-grow&quot;&gt;
+      &lt;div class=&quot;mb-4&quot;&gt;
+        &lt;p class=&quot;text-xl leading-tight&quot;&gt;Adam Wathan&lt;/p&gt;
+        &lt;p class=&quot;text-sm leading-tight text-grey-dark&quot;&gt;Developer at NothingWorks Inc.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;button class=&quot;text-xs font-semibold rounded-full px-4 py-1 leading-normal bg-white border border-purple text-purple hover:bg-purple hover:text-white&quot;&gt;Message&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<h2>Component-friendly</h2>
+<p>While you can do a <em>lot</em> with just utility classes, sometimes a component class is the right decision.</p>
+<p>Tailwind provides tools for <a href="extracting-components.html">extracting component classes</a> from repeated utility patterns, making it easy to update multiple instances of a component from one place:</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 text-center">
+    <button class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded">
+  Button
+</button>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;!-- Using utilities: --&gt;
+&lt;button class=&quot;bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded&quot;&gt;
+  Button
+&lt;/button&gt;
+
+&lt;!-- Extracting component classes: --&gt;
+&lt;button class=&quot;btn btn-blue&quot;&gt;
+  Button
+&lt;/button&gt;
+
+&lt;style&gt;
+  .btn {
+    @apply&#xA0;font-bold py-2 px-4 rounded;
+  }
+  .btn-blue {
+    @apply&#xA0;bg-blue text-white;
+  }
+  .btn-blue:hover {
+    @apply&#xA0;bg-blue-dark;
+  }
+&lt;/style&gt;</code></pre>
+  </div>
+</div>
+<h2>Responsive to the core</h2>
+<p>Every Tailwind utility also comes in responsive flavors, making it extremely easy to build responsive interfaces without ever leaving your HTML.</p>
+<p>Tailwind uses an intuitive <code>{screen}:</code> prefix that makes it easy to notice responsive classes in your markup while keeping the original class name recognizable and intact.</p>
+<div class="mt-8 v-cloak-hidden">
+  <responsive-code-sample code="&lt;div class=&quot;none:justify-start sm:justify-center md:justify-end lg:justify-between xl:justify-around ...&quot;&gt;
+  &lt;!-- ... --&gt;
+&lt;/div&gt;" slot-class>
+    <div slot="none"><div class="flex justify-start bg-grey-lighter">
+  <div class="text-grey-darker text-center bg-grey-light px-4 py-2 m-2">1</div>
+  <div class="text-grey-darker text-center bg-grey-light px-4 py-2 m-2">2</div>
+  <div class="text-grey-darker text-center bg-grey-light px-4 py-2 m-2">3</div>
+</div></div>
+    <div slot="sm"><div class="flex justify-center bg-grey-lighter">
+  <div class="text-grey-darker text-center bg-grey-light px-4 py-2 m-2">1</div>
+  <div class="text-grey-darker text-center bg-grey-light px-4 py-2 m-2">2</div>
+  <div class="text-grey-darker text-center bg-grey-light px-4 py-2 m-2">3</div>
+</div></div>
+    <div slot="md"><div class="flex justify-end bg-grey-lighter">
+  <div class="text-grey-darker text-center bg-grey-light px-4 py-2 m-2">1</div>
+  <div class="text-grey-darker text-center bg-grey-light px-4 py-2 m-2">2</div>
+  <div class="text-grey-darker text-center bg-grey-light px-4 py-2 m-2">3</div>
+</div></div>
+    <div slot="lg"><div class="flex justify-between bg-grey-lighter">
+  <div class="text-grey-darker text-center bg-grey-light px-4 py-2 m-2">1</div>
+  <div class="text-grey-darker text-center bg-grey-light px-4 py-2 m-2">2</div>
+  <div class="text-grey-darker text-center bg-grey-light px-4 py-2 m-2">3</div>
+</div></div>
+    <div slot="xl"><div class="flex justify-around bg-grey-lighter">
+  <div class="text-grey-darker text-center bg-grey-light px-4 py-2 m-2">1</div>
+  <div class="text-grey-darker text-center bg-grey-light px-4 py-2 m-2">2</div>
+  <div class="text-grey-darker text-center bg-grey-light px-4 py-2 m-2">3</div>
+</div></div>
+  </responsive-code-sample>
+</div>
+<h2>Designed to be customized</h2>
+<p>If it makes sense to be customizable, Tailwind lets you customize it.</p>
+<p>This includes colors, border sizes, font weights, spacing utilities, breakpoints, shadows, and tons more.</p>
+<p>Tailwind is written in <a href="http://postcss.org/">PostCSS</a> and configured in JavaScript, which means you have the full power of a real programming language at your fingertips.</p>
+<p>Tailwind is more than a CSS framework, <em>it&apos;s an engine for creating design systems.</em></p>
+<pre><code class="language-js">const colorPalette = {
+  // ...
+  &apos;grey-lighter&apos;: &apos;#f3f7f9&apos;,
+  // ...
+}
+
+module.exports = {
+  // ...
+  backgroundColors: colorPalette,
+  borderColors: {
+    default: colorPalette[&apos;grey-lighter&apos;],
+    ...colorPalette,
+  },
+  // ...
+}</code></pre>              </div>
+
+              
+              
+              
+
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+
+        
+      </div>
+      
+
+
+    </div>
+    
+
+  </div>
+</div>
+
+
+<svg style="height: 0; width: 0; position: absolute; visibility: hidden;">
+  <defs>
+    <linearGradient x1="0%" y1="0%" y2="100%" id="logoGradient">
+      <stop stop-color="#2383AE" offset="0%"/>
+      <stop stop-color="#6DD7B9" offset="100%"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+  <!-- Google Analytics  -->
+  
+  
+
+
+  <!-- Algolia DocSearch  -->
+  
+  
+
+
+
+
+
+      <script src="/assets/anchor.min.js"></script>
+      <script>
+        anchors.options.class = 'text-grey-dark';
+        anchors.add();
+      </script>
+    </body></html>

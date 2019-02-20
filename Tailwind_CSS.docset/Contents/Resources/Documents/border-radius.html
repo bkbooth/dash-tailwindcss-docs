@@ -1,0 +1,454 @@
+<!DOCTYPE html><html lang="en" class="bg-white antialiased"><head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Border Radius</title>
+      <link rel="stylesheet" href="/assets/styles-tailwind.css">
+      <link rel="stylesheet" href="/assets/styles-dash.css">
+    </head>
+<body data-sidebar-visible="true" class="font-source-sans font-normal text-black leading-normal">
+
+
+
+
+
+
+
+
+<div class="w-full max-w-screen-xl mx-auto px-6">
+  <div class="lg:flex -mx-6">
+
+    
+    
+    
+
+    
+    <div id="content-wrapper" class="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5 ">
+
+      
+      <div id="content">
+
+        
+        <div id="app" class="flex" v-cloak>
+
+          
+          <div class="pt-24 pb-8 lg:pt-28 w-full">
+            <div class="markdown mb-6 px-6 max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:px-12 xl:w-3/4">
+                              <h1>Border Radius</h1>
+              
+                              <div class="text-xl text-grey-dark mb-4">
+                  Utilities for controlling the border radius of an element.
+                </div>
+                          </div>
+            <div class="flex">
+              <div class="markdown px-6 xl:px-12 w-full max-w-lg mx-auto lg:ml-0 lg:mr-auto xl:mx-0 xl:w-3/4">
+                <h2 style="visibility: hidden; font-size: 0; margin: 0;">Class reference</h2>
+<div class="border-t border-b border-grey-light overflow-hidden relative">
+  <div class="lg:max-h-sm overflow-y-auto scrollbar-w-2 scrollbar-track-grey-lighter scrollbar-thumb-rounded scrollbar-thumb-grey scrolling-touch">
+    <table class="w-full text-left table-collapse">
+      <thead>
+        <tr>
+          <th class="text-sm font-semibold text-grey-darker p-2 bg-grey-lightest">Class</th>
+          <th class="text-sm font-semibold text-grey-darker p-2 bg-grey-lightest">Properties</th>
+        </tr>
+      </thead>
+      <tbody class="align-baseline">
+                <tr>
+          <td class="p-2 border-t border-grey-light font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-none</td>
+          <td class="p-2 border-t border-grey-light font-mono text-xs text-blue-dark whitespace-pre">border-radius: 0;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-sm</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-radius: .125rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-radius: .25rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-lg</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-radius: .5rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-full</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-radius: 9999px;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-t-none</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-left-radius: 0;
+border-top-right-radius: 0;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-r-none</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-right-radius: 0;
+border-bottom-right-radius: 0;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-b-none</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-bottom-right-radius: 0;
+border-bottom-left-radius: 0;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-l-none</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-left-radius: 0;
+border-bottom-left-radius: 0;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-t-sm</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-left-radius: .125rem;
+border-top-right-radius: .125rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-r-sm</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-right-radius: .125rem;
+border-bottom-right-radius: .125rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-b-sm</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-bottom-right-radius: .125rem;
+border-bottom-left-radius: .125rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-l-sm</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-left-radius: .125rem;
+border-bottom-left-radius: .125rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-t</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-left-radius: .25rem;
+border-top-right-radius: .25rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-r</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-right-radius: .25rem;
+border-bottom-right-radius: .25rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-b</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-bottom-right-radius: .25rem;
+border-bottom-left-radius: .25rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-l</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-left-radius: .25rem;
+border-bottom-left-radius: .25rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-t-lg</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-left-radius: .5rem;
+border-top-right-radius: .5rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-r-lg</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-right-radius: .5rem;
+border-bottom-right-radius: .5rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-b-lg</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-bottom-right-radius: .5rem;
+border-bottom-left-radius: .5rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-l-lg</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-left-radius: .5rem;
+border-bottom-left-radius: .5rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-t-full</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-left-radius: 9999px;
+border-top-right-radius: 9999px;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-r-full</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-right-radius: 9999px;
+border-bottom-right-radius: 9999px;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-b-full</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-bottom-right-radius: 9999px;
+border-bottom-left-radius: 9999px;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-l-full</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-left-radius: 9999px;
+border-bottom-left-radius: 9999px;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-tl-none</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-left-radius: 0;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-tr-none</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-right-radius: 0;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-br-none</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-bottom-right-radius: 0;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-bl-none</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-bottom-left-radius: 0;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-tl-sm</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-left-radius: .125rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-tr-sm</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-right-radius: .125rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-br-sm</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-bottom-right-radius: .125rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-bl-sm</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-bottom-left-radius: .125rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-tl</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-left-radius: .25rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-tr</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-right-radius: .25rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-br</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-bottom-right-radius: .25rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-bl</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-bottom-left-radius: .25rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-tl-lg</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-left-radius: .5rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-tr-lg</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-right-radius: .5rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-br-lg</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-bottom-right-radius: .5rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-bl-lg</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-bottom-left-radius: .5rem;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-tl-full</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-left-radius: 9999px;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-tr-full</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-top-right-radius: 9999px;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-br-full</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-bottom-right-radius: 9999px;</td>
+        </tr>
+                <tr>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-purple-dark whitespace-no-wrap">.rounded-bl-full</td>
+          <td class="p-2 border-t border-grey-lighter font-mono text-xs text-blue-dark whitespace-pre">border-bottom-left-radius: 9999px;</td>
+        </tr>
+              </tbody>
+    </table>
+  </div>
+</div>
+<h2>Rounded corners</h2>
+<p>Use the <code>.rounded-sm</code>, <code>.rounded</code>, or <code>.rounded-lg</code> utilities to apply different border radius sizes to an element.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 flex justify-around text-sm">
+    <div class="bg-grey-light mr-3 p-4 rounded-sm">.rounded-sm</div>
+<div class="bg-grey-light mr-3 p-4 rounded">.rounded</div>
+<div class="bg-grey-light p-4 rounded-lg">.rounded-lg</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;div class=&quot;rounded-sm&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;rounded&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;rounded-lg&quot;&gt;&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<p><a id="test" style="position: relative; top: -64px; display: block; visibility: hidden;"></a></p>
+<h2>Pills and circles</h2>
+<p>Use the <code>.rounded-full</code> utility to create pills and circles.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 flex items-center justify-around text-sm">
+    <div class="bg-grey-light mr-3 py-2 px-4 rounded-full">Pill shape</div>
+<div class="bg-grey-light h-16 w-16 rounded-full flex items-center justify-center">Circle</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;div class=&quot;rounded-full py-2 px-4&quot;&gt;Pill shape&lt;/div&gt;
+&lt;div class=&quot;rounded-full h-16 w-16 flex items-center justify-center&quot;&gt;Circle&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<h2>No rounding</h2>
+<p>Use <code>.rounded-none</code> to remove an existing border radius from an element.</p>
+<p>This is most commonly used to remove a border radius that was applied at a smaller breakpoint.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 flex justify-around text-sm py-8">
+    <div class="p-4 rounded-none bg-grey-light">.rounded-none</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;div class=&quot;rounded-none&quot;&gt;&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<h2>Rounding sides separately</h2>
+<p>Use <code>.rounded-{t|r|b|l}{-size?}</code> to only round one side an element.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 flex justify-around text-sm">
+    <div class="bg-grey-light mr-3 p-4 rounded-t-lg">.rounded-t-lg</div>
+<div class="bg-grey-light mr-3 p-4 rounded-r-lg">.rounded-r-lg</div>
+<div class="bg-grey-light mr-3 p-4 rounded-b-lg">.rounded-b-lg</div>
+<div class="bg-grey-light p-4 rounded-l-lg">.rounded-l-lg</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;div class=&quot;rounded-t-lg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;rounded-r-lg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;rounded-b-lg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;rounded-l-lg&quot;&gt;&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<h2>Rounding corners separately</h2>
+<p>Use <code>.rounded-{tl|tr|br|bl}{-size?}</code> to only round one corner an element.</p>
+<div class="rounded overflow-hidden border border-grey-light mb-8 bg-white">
+  <div class="border-b border-grey-light p-4 flex justify-around text-sm">
+    <div class="bg-grey-light mr-3 p-4 rounded-tl-lg">.rounded-tl-lg</div>
+<div class="bg-grey-light mr-3 p-4 rounded-tr-lg">.rounded-tr-lg</div>
+<div class="bg-grey-light mr-3 p-4 rounded-br-lg">.rounded-br-lg</div>
+<div class="bg-grey-light p-4 rounded-bl-lg">.rounded-bl-lg</div>
+  </div>
+  <div class="p-4 bg-grey-lightest">
+    <pre class="language-html" style="margin: 0; padding: 0;"><code>&lt;div class=&quot;rounded-tl-lg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;rounded-tr-lg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;rounded-br-lg&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;rounded-bl-lg&quot;&gt;&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<h2>Responsive</h2>
+<p>To control the border radius of an element at a specific breakpoint, add a <code>{screen}:</code> prefix to any existing border radius utility. For example, use <code>md:rounded-lg</code> to apply the <code>rounded-lg</code> utility at only medium screen sizes and above.</p>
+<p>For more information about Tailwind&apos;s responsive design features, check out the <a href="responsive-design.html">Responsive Design</a> documentation.</p>
+<div class="mt-8 v-cloak-hidden">
+  <responsive-code-sample code="&lt;div class=&quot;none:rounded sm:rounded-t md:rounded-b-lg lg:rounded-none xl:rounded-r ...&quot;&gt;
+  &lt;!-- ... --&gt;
+&lt;/div&gt;" slot-class>
+    <div slot="none"><div class="flex justify-center">
+  <div class="bg-grey w-12 h-12 rounded"></div>
+</div></div>
+    <div slot="sm"><div class="flex justify-center">
+  <div class="bg-grey w-12 h-12 rounded-t"></div>
+</div></div>
+    <div slot="md"><div class="flex justify-center">
+  <div class="bg-grey w-12 h-12 rounded-b-lg"></div>
+</div></div>
+    <div slot="lg"><div class="flex justify-center">
+  <div class="bg-grey w-12 h-12 rounded-none"></div>
+</div></div>
+    <div slot="xl"><div class="flex justify-center">
+  <div class="bg-grey w-12 h-12 rounded-r"></div>
+</div></div>
+  </responsive-code-sample>
+</div>
+<h2>Customizing</h2>
+<h3>Border Radiuses</h3>
+<p>By default Tailwind provides five border radius size utilities. You can change, add, or remove these by editing the <code>borderRadius</code> section of your Tailwind config.</p>
+<div class="border border-grey-light rounded mb-8 overflow-hidden">
+  <div class="bg-grey-lightest p-4 font-mono text-xs">
+    <div class="whitespace-pre text-grey-dark">{</div>
+    <div class="whitespace-pre text-grey-light">  // ...</div>
+    <div class="whitespace-pre text-grey-dark"><span class="text-purple-dark">  borderRadius</span>: {</div>
+    <div><div class="text-grey-darker">&#xA0;&#xA0;&#xA0;&#xA0;&apos;none&apos;: &apos;0&apos;,</div>
+<div class="text-grey"><span class="text-grey">-</span>&#xA0;&#xA0;&#xA0;&apos;sm&apos;: &apos;.125rem&apos;,</div>
+<div class="text-grey"><span class="text-grey">-</span>&#xA0;&#xA0;&#xA0;default: &apos;.25rem&apos;,</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;default: &apos;4px&apos;,</div>
+<div class="text-grey"><span class="text-grey">-</span>&#xA0;&#xA0;&#xA0;&apos;lg&apos;: &apos;.5rem&apos;,</div>
+<div class="text-grey"><span class="text-grey">-</span>&#xA0;&#xA0;&#xA0;&apos;full&apos;: &apos;9999px&apos;,</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;&apos;large&apos;: &apos;12px&apos;,</div></div>
+    <div class="whitespace-pre text-grey-dark">  }</div>
+    <div class="whitespace-pre text-grey-dark">}</div>
+  </div>
+</div>
+<h3>Responsive and State Variants</h3>
+<p>By default, only responsive variants are generated for border radius utilities.</p>
+<p>You can control which variants are generated for the border radius utilities by modifying the <code>borderRadius</code> property in the <code>modules</code> section of your Tailwind config file.</p>
+<p>For example, this config will also generate hover and focus variants:</p>
+<div class="border border-grey-light rounded mb-8 overflow-hidden">
+  <div class="bg-grey-lightest p-4 font-mono text-xs">
+    <div class="whitespace-pre text-grey-dark">{</div>
+    <div class="whitespace-pre text-grey-light">  // ...</div>
+    <div class="whitespace-pre text-grey-dark"><span class="text-purple-dark">  modules</span>: {</div>
+    <div><div class="text-grey-light">&#xA0;&#xA0;&#xA0;&#xA0;// ...</div>
+<div class="text-grey"><span class="text-grey">-</span>&#xA0;&#xA0;&#xA0;borderRadius: [&apos;responsive&apos;],</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;borderRadius: [&apos;responsive&apos;, &apos;hover&apos;, &apos;focus&apos;, &apos;active&apos;, &apos;group-hover&apos;],</div></div>
+    <div class="whitespace-pre text-grey-dark">  }</div>
+    <div class="whitespace-pre text-grey-dark">}</div>
+  </div>
+</div>
+<h3>Disabling</h3>
+<p>If you don&apos;t plan to use the border radius utilities in your project, you can disable them entirely by setting the <code>borderRadius</code> property to <code>false</code> in the <code>modules</code> section of your config file:</p>
+<div class="border border-grey-light rounded mb-8 overflow-hidden">
+  <div class="bg-grey-lightest p-4 font-mono text-xs">
+    <div class="whitespace-pre text-grey-dark">{</div>
+    <div class="whitespace-pre text-grey-light">  // ...</div>
+    <div class="whitespace-pre text-grey-dark"><span class="text-purple-dark">  modules</span>: {</div>
+    <div><div class="text-grey-light">&#xA0;&#xA0;&#xA0;&#xA0;// ...</div>
+<div class="text-grey"><span class="text-grey">-</span>&#xA0;&#xA0;&#xA0;borderRadius: [&apos;responsive&apos;],</div>
+<div class="text-blue-dark"><span class="text-blue-light">+</span>&#xA0;&#xA0;&#xA0;borderRadius: false,</div></div>
+    <div class="whitespace-pre text-grey-dark">  }</div>
+    <div class="whitespace-pre text-grey-dark">}</div>
+  </div>
+</div>              </div>
+
+              
+              
+              
+
+            </div>
+          </div>
+          
+
+
+        </div>
+        
+
+        
+      </div>
+      
+
+
+    </div>
+    
+
+  </div>
+</div>
+
+
+<svg style="height: 0; width: 0; position: absolute; visibility: hidden;">
+  <defs>
+    <linearGradient x1="0%" y1="0%" y2="100%" id="logoGradient">
+      <stop stop-color="#2383AE" offset="0%"/>
+      <stop stop-color="#6DD7B9" offset="100%"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+  <!-- Google Analytics  -->
+  
+  
+
+
+  <!-- Algolia DocSearch  -->
+  
+  
+
+
+
+
+
+      <script src="/assets/anchor.min.js"></script>
+      <script>
+        anchors.options.class = 'text-grey-dark';
+        anchors.add();
+      </script>
+    </body></html>
