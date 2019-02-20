@@ -5,6 +5,9 @@
   "author": "Ben Booth <bkbooth@gmail.com> (https://benbooth.co)",
   "license": "MIT",
   "scripts": {
+    "build:docs": "node ./lib/build-docs.js",
+    "prebuild:docs": "npm run clean:docs",
+    "clean:docs": "rimraf Tailwind_CSS.docset/*",
     "scrape": "wget --recursive --no-clobber --page-requisites --html-extension --convert-links --restrict-file-names=windows --directory-prefix=scraped --domains tailwindcss.com --no-parent https://tailwindcss.com/docs/",
     "prescrape": "node ./lib/check-wget.js && npm run clean:scrape",
     "clean:scrape": "rimraf scraped"
@@ -15,6 +18,8 @@
     }
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "mkdirp": "^0.5.1",
     "rimraf": "^2.6.3"
   },
   "devDependencies": {
