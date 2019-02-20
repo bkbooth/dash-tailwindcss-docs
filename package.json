@@ -5,6 +5,10 @@
   "author": "Ben Booth <bkbooth@gmail.com> (https://benbooth.co)",
   "license": "MIT",
   "scripts": {
+    "build": "npm-run-all scrape build:docs build:db",
+    "build:db": "node ./lib/build-db.js",
+    "prebuild:db": "npm run clean:db",
+    "clean:db": "rimraf Tailwind_CSS.docset/Contents/Resources/docSet.dsidx",
     "build:docs": "node ./lib/build-docs.js",
     "prebuild:docs": "npm run clean:docs",
     "clean:docs": "rimraf Tailwind_CSS.docset/*",
@@ -20,7 +24,9 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "mkdirp": "^0.5.1",
-    "rimraf": "^2.6.3"
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^2.6.3",
+    "sqlite3": "^4.0.6"
   },
   "devDependencies": {
     "husky": "^1.3.1",

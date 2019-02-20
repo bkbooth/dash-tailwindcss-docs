@@ -3,6 +3,9 @@ const path = require('path');
 const BASE_PATH = path.join('./Tailwind_CSS.docset');
 
 module.exports = {
+  // Location of the docset database
+  dbFile: path.join(BASE_PATH, 'Contents/Resources/docSet.dsidx'),
+
   // Location of the docset documents
   docsDir: path.join(BASE_PATH, 'Contents/Resources/Documents'),
   // Location of the scraped documents
