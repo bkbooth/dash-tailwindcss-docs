@@ -13,7 +13,7 @@
 	<key>isDashDocset</key>
 	<true/>
 	<key>dashIndexFilePath</key>
-	<string>what-is-tailwind.html</string>
+	<string>installation.html</string>
 	<key>isJavaScriptEnabled</key>
 	<true/>
 </dict>
